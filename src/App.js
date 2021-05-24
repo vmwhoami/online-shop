@@ -1,14 +1,13 @@
-import './App.css';
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Home } from './pages'
 function App() {
+
   return (
-    <div className="App">
-      <div className="btn-group">
-        <button type="button" className="btn btn-primary active" aria-current="page">Active link</button>
-        <button type="button" className="btn btn-primary">Link</button>
-        <button type="button" className="btn btn-primary">Link</button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} exact />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

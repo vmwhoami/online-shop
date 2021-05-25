@@ -9,9 +9,8 @@ const productsReducer = (state = initial, action) => {
   switch (action.type) {
     case GET_PRODUCTS:
       return {
-        ...state, errors: false,
+        ...state, errors: false, products: action.payload,
       };
-
     default:
       return state;
   }

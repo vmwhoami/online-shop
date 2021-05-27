@@ -1,26 +1,25 @@
-import React from 'react'
-import Layout from '../layout'
-import { useSelector, useDispatch } from 'react-redux';
-import firebase from '../firebase/firebaseConfig'
-import getProducts from '../redux/products/productsActions'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+// import PropTypes from 'prop-types';
+import Layout from '../layout';
+// import firebase from '../firebase/firebaseConfig';
+import getProducts from '../redux/products/productsActions';
 
-const Home = props => {
+const Home = () => {
   const dispatch = useDispatch();
 
   const getSmth = () => {
-    dispatch(getProducts())
-
-  }
+    dispatch(getProducts());
+  };
   return (
     <Layout>
       <button type="button" onClick={() => getSmth()}>get smth</button>
     </Layout>
-  )
-}
+  );
+};
 
-Home.propTypes = {
+// Home.propTypes = {
 
-}
+// };
 
-export default Home
+export default Home;

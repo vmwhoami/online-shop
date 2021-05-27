@@ -1,3 +1,11 @@
 * a{
   cursor: pointer;
 }
+
+.faded{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.faded:hover{
+  color: white !important;
+}

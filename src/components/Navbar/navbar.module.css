@@ -9,18 +9,18 @@
  
 
 .logo svg{
-  height: 2.5rem;
+  height: 3rem;
   width: 200px;
 }
 
 
  .cart{
-    color: white;
+    
    border: 2px solid white;
  }
 
 .svg{
-fill: white;
+fill: rgba(255, 255, 255, 0.6);
 margin-right: 5px;
  }
  .svg svg{
@@ -29,6 +29,8 @@ margin-right: 5px;
    height:1rem;
  
  }
+ 
+
 
  .quantity{
    padding: 5px;

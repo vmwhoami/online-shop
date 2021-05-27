@@ -19,7 +19,7 @@ const NavBar = () => (
             {LinksData.map((link) => {
               const { id, title, path } = link;
               return (
-                <Nav.Link key={id} href={path} className="text-uppercase text-white">{title}</Nav.Link>
+                <Nav.Link key={id} href={path} className="text-uppercase .faded">{title}</Nav.Link>
               );
             })}
           </Nav>
@@ -29,7 +29,7 @@ const NavBar = () => (
             </Link>
           </Navbar.Brand>
           <Nav className="col justify-content-end">
-            <Nav.Link eventKey={2} className="text-uppercase text-white d-flex align-items-center p-1 border border-white " href="/cart">
+            <Nav.Link eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white" href="/cart">
               <span className="px-1"> Cart</span>
               <span className={style.svg}>
                 {' '}
@@ -39,7 +39,7 @@ const NavBar = () => (
             </Nav.Link>
             <Nav.Link
               eventKey={2}
-              className="text-uppercase text-white d-flex align-items-center py-0 px-4 border border-white  "
+              className="text-uppercase .faded d-flex align-items-center py-0 px-4 border border-white  "
               href="/cart"
             >
               0

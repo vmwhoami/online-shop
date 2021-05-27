@@ -3,15 +3,18 @@ import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer';
-import CartDetails from './components/CartDetails';
+import Cart from './components/Cart/Cart';
 
 const Layout = ({ children }) => (
-  <Container fluid className="px-0 w-100">
-    <NavBar />
-    <CartDetails />
-    {children}
-    <Footer />
-  </Container>
+  <>
+    <Cart />
+    <Container fluid className="px-0 w-100">
+      <NavBar />
+
+      {children}
+      <Footer />
+    </Container>
+  </>
 );
 
 Layout.propTypes = {

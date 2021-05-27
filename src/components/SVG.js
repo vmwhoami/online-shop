@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Victoria = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="455" height="135" viewBox="0 0 455 135" fill="none">
+  <svg xmlns="http://www.w3.org/2000/svg" width="455" height="135" viewBox="0 0 455 135">
     <g id="victoria 1">
       <g id="Layer 2">
         <g id="Group">
@@ -21,4 +21,11 @@ const Victoria = () => (
   </svg>
 );
 
-export default Victoria;
+const Cart = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 28">
+    <path d="M10 24c0 1.094-0.906 2-2 2s-2-0.906-2-2 0.906-2 2-2 2 0.906 2 2zM24 24c0 1.094-0.906 2-2 2s-2-0.906-2-2 0.906-2 2-2 2 0.906 2 2zM26 7v8c0 0.5-0.391 0.938-0.891 1l-16.312 1.906c0.078 0.359 0.203 0.719 0.203 1.094 0 0.359-0.219 0.688-0.375 1h14.375c0.547 0 1 0.453 1 1s-0.453 1-1 1h-16c-0.547 0-1-0.453-1-1 0-0.484 0.703-1.656 0.953-2.141l-2.766-12.859h-3.187c-0.547 0-1-0.453-1-1s0.453-1 1-1h4c1.047 0 1.078 1.25 1.234 2h18.766c0.547 0 1 0.453 1 1z" />
+
+  </svg>
+);
+
+export { Victoria, Cart };

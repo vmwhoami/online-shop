@@ -1,50 +1,55 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Nav, Row } from 'react-bootstrap';
+import {
+  Container, Nav, Navbar,
+} from 'react-bootstrap';
 import LinksData from './links';
 import style from './navbar.module.css';
-import Victoria from '../SVG';
+import { Victoria, Cart } from '../SVG';
 // import PropTypes from 'prop-types';
 
 const NavBar = () => (
   <header className={`header header-dark ${style.header}`}>
-    <Container>
-      <Row>
-        <Nav
-          className={`navbar navbar-expand-lg ${style.navbar}`}
-        >
-          <div className="collapse navbar-collapse order-3 order-lg-1" id="navbarMenu">
-            <Link to="/" className={style.logo}>
+
+    <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
+      <Container>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav " />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="col">
+            {LinksData.map((link) => {
+              const { id, title, path } = link;
+              return (
+                <Nav.Link key={id} href={path} className="text-uppercase text-white">{title}</Nav.Link>
+              );
+            })}
+          </Nav>
+          <Navbar.Brand className={`col d-flex justify-content-center ${style.logo}`}>
+            <Link to="/">
               <Victoria />
             </Link>
-            <ul className="navbar-nav mr-auto">
-              {LinksData.map((link) => {
-                const { id, title, path } = link;
-                return (
-                  <Link
-                    className="py-2 d-none d-md-inline-block text-uppercase text-light"
-                    key={id}
-                    to={path}
-                  >
-                    {title}
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
+          </Navbar.Brand>
+          <Nav className="col justify-content-end">
+            <Nav.Link eventKey={2} className="text-uppercase text-white d-flex align-items-center p-1 border border-white " href="/cart">
+              <span className="px-1"> Cart</span>
+              <span className={style.svg}>
+                {' '}
+                <Cart />
+              </span>
 
-          <div className="collapse navbar-collapse order-4 order-lg-3" id="navbarMenu2">
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to="/login" className="nav-link text-uppercase text-light">
-                  Log In
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </Nav>
-      </Row>
-    </Container>
+            </Nav.Link>
+            <Nav.Link
+              eventKey={2}
+              className="text-uppercase text-white d-flex align-items-center py-0 px-4 border border-white  "
+              href="/cart"
+            >
+              0
+            </Nav.Link>
+          </Nav>
+
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
   </header>
 );
 

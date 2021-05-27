@@ -1,0 +1,14 @@
+.navbar{
+  width: 100%;
+
+   min-height: 5rem;
+}
+
+.header{
+  background: rgba(16, 16, 16, 0.95);
+}
+ 
+
+.logo svg{
+  height: 3rem;
+}

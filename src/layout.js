@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer';
 import CartDetails from './components/CartDetails';
 

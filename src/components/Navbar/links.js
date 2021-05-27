@@ -14,14 +14,5 @@ export default [
     title: 'Categories',
     path: '/categories',
   },
-  {
-    id: 4,
-    title: 'Cart',
-    path: '/cart',
-  },
-  {
-    id: 5,
-    title: 'Checkout',
-    path: '/checkout',
-  },
+
 ];

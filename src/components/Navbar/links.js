@@ -14,5 +14,10 @@ export default [
     title: 'Categories',
     path: '/categories',
   },
+  {
+    id: 4,
+    title: 'Add',
+    path: '/addprod',
+  },
 
 ];

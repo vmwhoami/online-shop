@@ -7,7 +7,6 @@ left: 0;
 background-color: rgba(0, 0, 0, 0.089);
 backdrop-filter: blur(2px) brightness(80%);
 z-index: 1300;
-
 }
 
 .content{
@@ -20,6 +19,7 @@ height: 100vh;
 background-color: white;
 z-index: 2000;
 }
+
 
 .close{
   background-color: rgba(71, 71, 71, 0.171) !important;
@@ -38,4 +38,10 @@ z-index: 2000;
 
 .close svg{
   fill: rgba(71, 71, 71, 0.397);
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: 70%;
+  }
 }

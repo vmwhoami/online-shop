@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImCart } from 'react-icons/all';
 import { Link } from 'react-router-dom';
 import {
   Container, Nav, Navbar,
@@ -6,7 +7,7 @@ import {
 import { useDispatch } from 'react-redux';
 import LinksData from './links';
 import style from './navbar.module.css';
-import { Victoria, Cart } from '../SVG';
+import Victoria from '../SVG';
 import switchCart from '../../redux/cart/cartActions';
 // import PropTypes from 'prop-types';
 
@@ -39,7 +40,8 @@ const NavBar = () => {
                 <span className="px-1"> Cart</span>
                 <span className={style.svg}>
                   {' '}
-                  <Cart />
+                  <ImCart />
+
                 </span>
 
               </Nav.Link>

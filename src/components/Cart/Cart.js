@@ -1,10 +1,12 @@
 import React from 'react';
+import { GrFormClose } from 'react-icons/all';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import style from './cart.module.css';
 import switchCart from '../../redux/cart/cartActions';
-import { Close } from '../SVG';
+import CartButtons from './CartButtons';
+import CartItems from './items';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
@@ -47,9 +49,12 @@ const Cart = () => {
             <div className="d-flex w-100 justify-content-between">
               <h2 className="text-uppercase">Cart</h2>
               <Button className={style.close} onClick={openCloseCart}>
-                <Close />
+                <GrFormClose />
               </Button>
             </div>
+
+            <CartItems />
+            <CartButtons />
           </motion.div>
         </>
       )}

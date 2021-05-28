@@ -1,11 +1,53 @@
-* a{
+
+:root {
+  --navbar: #101010f2;
+  --faded: #ffffff99;
+  --green: #4F944F;
+  --greendark:#427b42;
+  --grey: #cacaca;
+  --greydark:#cacaca;
+  --greyborder:#c4c4c4;
+}
+
+/*  */
+
+ a{
   cursor: pointer;
+  text-decoration: none;
 }
 
 .faded{
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--faded);
 }
 
 .faded:hover{
   color: white !important;
+}
+
+
+.btn-flat {
+  background-color: var(--green);
+  border: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.btn-grey {
+  background-color: var(--grey);
+  border: var(--greyborder);
+  color: var(--navbar);
+  text-transform: uppercase;
+}
+
+.btn-grey:hover{
+  text-decoration: none;
+  color: white;
+  background-color: var(--greydark);
+}
+
+.btn-flat:hover{
+  text-decoration: none;
+  color: white;
+  background-color: var(--greendark);
+
 }

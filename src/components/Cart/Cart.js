@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import style from './cart.module.css';
@@ -15,25 +16,44 @@ const Cart = () => {
 
   if (!cart) return null;
   return (
-    <>
-      <div
-        role="button"
-        onKeyDown={openCloseCart}
-        onClick={() => dispatch(switchCart())}
-        className={style.background}
-        tabIndex={0}
-        aria-label="Modal fade"
-      />
-      <div className={style.content}>
-        <div className="d-flex w-100 justify-content-between">
-          <h2 className="text-uppercase">Cart</h2>
-          <Button className={style.close} onClick={openCloseCart}>
-            <Close />
-          </Button>
-        </div>
-      </div>
-
-    </>
+    <AnimatePresence>
+      {cart && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: 1 }}
+            exit={{ opacity: 0 }}
+            role="button"
+            onKeyDown={openCloseCart}
+            onClick={() => dispatch(switchCart())}
+            className={style.background}
+            tabIndex={0}
+            aria-label="Modal fade"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -1000 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              type: 'Tween',
+            }}
+            transition={{
+              x: { type: 'spring', stiffness: 100 },
+              default: { duration: 0.3 },
+            }}
+            exit={{ opacity: 0 }}
+            className={style.content}
+          >
+            <div className="d-flex w-100 justify-content-between">
+              <h2 className="text-uppercase">Cart</h2>
+              <Button className={style.close} onClick={openCloseCart}>
+                <Close />
+              </Button>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 };
 

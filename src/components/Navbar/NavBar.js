@@ -41,15 +41,13 @@ const NavBar = () => {
                 <span className={style.svg}>
                   {' '}
                   <ImCart />
-
+                  {' '}
                 </span>
-
               </Nav.Link>
               <Nav.Link
                 onClick={openCart}
                 eventKey={2}
                 className="text-uppercase .faded d-flex align-items-center py-0 px-4 border border-white  "
-
               >
                 0
               </Nav.Link>
@@ -58,7 +56,6 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
     </header>
   );
 };

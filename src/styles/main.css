@@ -4,7 +4,7 @@
   --faded: #ffffff99;
   --green: #4F944F;
   --greendark:#427b42;
-  --grey: #cacaca;
+  --grey: #dddddd;
   --greydark:#cacaca;
   --greyborder:#c4c4c4;
 }
@@ -41,7 +41,7 @@
 
 .btn-grey:hover{
   text-decoration: none;
-  color: white;
+  color: var(--navbar);
   background-color: var(--greydark);
 }
 
@@ -49,5 +49,4 @@
   text-decoration: none;
   color: white;
   background-color: var(--greendark);
-
 }

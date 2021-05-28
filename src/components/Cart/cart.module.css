@@ -39,6 +39,15 @@ z-index: 2000;
 .close svg{
   fill: rgba(71, 71, 71, 0.397);
 }
+.cartitems{
+ 
+width: 100%;
+height: 85%;
+padding: 10px;
+overflow-y:auto;
+overflow-x:auto;
+}
+
 
 @media screen and (max-width: 900px) {
   .content {

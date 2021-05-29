@@ -12,7 +12,6 @@ const Cart = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
   const dispatch = useDispatch();
   const openCloseCart = () => {
-    console.log('clicked');
     dispatch(switchCart());
   };
 

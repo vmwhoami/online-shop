@@ -13,7 +13,7 @@ z-index: 1300;
 position: absolute;
 right: 0;
 top: 0;
-width: 35%;
+width: 40%;
 padding: 2rem;
 height: 100vh;
 background-color: white;
@@ -48,8 +48,13 @@ overflow-y:auto;
 overflow-x:auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 50%;
+  }
+}
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .content {
     width: 70%;
   }

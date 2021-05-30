@@ -1,5 +1,6 @@
 
 :root {
+  --dark:#101010;
   --navbar: #101010f2;
   --faded: #ffffff99;
   --green: #4F944F;
@@ -36,13 +37,13 @@
 .btn-grey {
   background-color: var(--grey);
   border: var(--greyborder);
-  color: var(--navbar);
+  color: var(--dark);
   text-transform: uppercase;
 }
 
 .btn-grey:hover{
   text-decoration: none;
-  color: var(--navbar);
+  color: var(--dark);
   background-color: var(--greydark);
 }
 
@@ -50,4 +51,12 @@
   text-decoration: none;
   color: white;
   background-color: var(--greendark);
+}
+
+.pb-10, .py-10 {
+  padding-bottom: 6.25rem !important;
+}
+
+.pt-10, .py-10 {
+  padding-top: 6.25rem !important;
 }

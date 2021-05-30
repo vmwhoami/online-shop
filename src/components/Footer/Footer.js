@@ -1,7 +1,10 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import style from './footer.module.css'
-// import PropTypes from 'prop-types';
+
+import {
+  Container, Row, Col, Button, Nav,
+} from 'react-bootstrap';
+import { TiSocialFacebook, AiOutlineTwitter, GrYoutube } from 'react-icons/all';
+import style from './footer.module.css';
 
 const Footer = () => (
   <footer className={`${style.bgdark} text-white py-0`}>
@@ -10,11 +13,43 @@ const Footer = () => (
         <Col lg={6} className="py-10">
           <Row>
             <Col md={8}>
-              <p>Thanks to
-                <a target="_blank" href="https://vitaliemelnic.tech" className="underline">vmwhoami</a>
+              <p>
+                Thanks to
+                {' '}
+                <a target="_blank" href="https://vitaliemelnic.tech" className="underline" rel="noreferrer">vmwhoami</a>
+                {' '}
+                {' '}
                 for the images used in this demo theme. Head over to
+                {' '}
+                {' '}
                 <a href="https://vitaliemelnic.tech" className="underline">their website</a>
-                to get these products.</p>
+                {' '}
+                {' '}
+                to get these products.
+              </p>
+            </Col>
+          </Row>
+        </Col>
+        <Col lg={6} className="py-10">
+          <Row className="justify-content-end">
+            <Col lg={10}>
+              <h4 className="eyebrow mb-2">Subscribe</h4>
+              <div className="input-group">
+                <input type="text" className="form-control form-control-lg" placeholder="Email" aria-label="Subscribe" aria-describedby="button-addon2" />
+                <div className="input-group-append">
+                  <Button className="btn btn-white" type="button">Subscribe</Button>
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row className="justify-content-end">
+            <Col className="col-lg-10">
+              <h4 className="eyebrow mt-4">Follow us</h4>
+              <Nav className="nav-icons">
+                <a className="nav-link h4 text-white pl-0 " target="_blank" href="https://www.facebook.com/vmwhoami" rel="noreferrer"><TiSocialFacebook /></a>
+                <a className="nav-link h4 text-white  pl-0 " target="_blank" href="https://twitter.com/vmwhoami" rel="noreferrer"><AiOutlineTwitter /></a>
+                <a className="nav-link h4 text-white  pl-0 " target="_blank" href="https://www.youtube.com/user/vmwhoiam/videos" rel="noreferrer"><GrYoutube /></a>
+              </Nav>
             </Col>
           </Row>
         </Col>
@@ -23,55 +58,4 @@ const Footer = () => (
   </footer>
 );
 
-// Footer.propTypes = {
-
-// };
-
 export default Footer;
-
-
-
-
-  // <div class="col-lg-6 py-10">
-  //   <div class="row">
-  //     <div class="col-md-8">
-  //       <p>Thanks to <a href="https://www.opumo.com" class="underline">Opumo</a> for the images used in this demo theme. Head over to <a href="https://www.opumo.com" class="underline">their store</a> to get these products.</p>
-  //     </div>
-  //   </div>
-  //   <div class="row">
-  //     <div class="col-md-10">
-  //       <h4 class="eyebrow mb-2">Quick Links</h4>
-  //       <ul class="list-group list-group-columns">
-  //         <li class="list-group-item"><a href="about.html">About</a></li>
-  //         <li class="list-group-item"><a href="contact.html">Contact Us</a></li>
-  //         <li class="list-group-item"><a href="faq.html">FAQ</a></li>
-  //         <li class="list-group-item"><a href="blog.html">Blog</a></li>
-  //         <li class="list-group-item"><a href="text.html">Terms of Use</a></li>
-  //       </ul>
-  //     </div>
-  //   </div>
-  // </div>
-  // <div class="col-lg-6 py-10">
-  //   <div class="row justify-content-end">
-  //     <div class="col-lg-10">
-  //       <h4 class="eyebrow mb-2">Subscribe</h4>
-  //       <div class="input-group">
-  //         <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Subscribe" aria-describedby="button-addon2">
-  //           <div class="input-group-append">
-  //             <button class="btn btn-white" type="button" id="button-addon2">Subscribe</button>
-  //           </div>
-  //               </div>
-  //       </div>
-  //     </div>
-  //     <div class="row justify-content-end">
-  //       <div class="col-lg-10">
-  //         <h4 class="eyebrow mb-2">Follow us</h4>
-  //         <nav class="nav nav-icons">
-  //           <a class="nav-link" href="#!"><i class="icon-facebook-o"></i></a>
-  //           <a class="nav-link" href="#!"><i class="icon-twitter-o"></i></a>
-  //           <a class="nav-link" href="#!"><i class="icon-youtube-o"></i></a>
-  //         </nav>
-  //       </div>
-  //     </div>
-  //   </div>
-

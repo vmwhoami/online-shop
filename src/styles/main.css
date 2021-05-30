@@ -11,8 +11,7 @@
   --lg-br: 990px;
 }
 
-/*  */
-
+ 
  a{
   cursor: pointer;
   text-decoration: none;
@@ -59,4 +58,64 @@
 
 .pt-10, .py-10 {
   padding-top: 6.25rem !important;
+}
+.text-white a:hover{
+  color: #fff;
+}
+.underline{
+  color: white;
+}
+
+.eyebrow, .section-title, .widget-collapse, .item-brand {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+
+.form-control {
+  display: block !important;
+  width: 100% !important;
+  height: calc(1.5em + 1.875rem + 2px) !important;
+  padding: 0.9375rem 0.9375rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: transparent !important;
+  background-clip: padding-box !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 0 !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.form-control-lg {
+  height: calc(1.5em + 2.125rem + 2px) !important;
+  padding: 1.0625rem 1.0625rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.input-group > .form-control, .input-group > .form-control-plaintext, .input-group > .custom-select, .input-group > .custom-file {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  width: 1% !important;
+  margin-bottom: 0 !important;
+}
+
+.text-white .form-control, .text-white .custom-select {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+}
+
+.btn-white {
+  color: var(--dark) !important;
+  background-color: #fff !important;
+  border-color: #fff !important;
+  text-transform: uppercase;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }

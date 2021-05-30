@@ -10,7 +10,6 @@ const Layout = ({ children }) => (
     <Cart />
     <Container fluid className="px-0 w-100">
       <NavBar />
-
       {children}
       <Footer />
     </Container>

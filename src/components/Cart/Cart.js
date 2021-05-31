@@ -53,7 +53,7 @@ const Cart = () => {
             </div>
 
             <CartItems />
-            <CartButtons />
+            <CartButtons openCloseCart={openCloseCart} />
           </motion.div>
         </>
       )}

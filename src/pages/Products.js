@@ -1,12 +1,15 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import ProdDetails from '../components/Products/ProdDetail';
 import Layout from '../layout';
+
 // import PropTypes from 'prop-types';
 
 const Products = () => (
   <Layout>
-    <div className="products">
-      Here are going to be all the products
-    </div>
+    <Container>
+      <ProdDetails />
+    </Container>
   </Layout>
 );
 

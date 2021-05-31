@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import '@react-firebase/auth';
-import '@react-firebase/database';
+import * as firebase from 'firebase';
+// import '@react-firebase/auth';
+// import '@react-firebase/database';
 
 const {
   REACT_APP_API_KEY, REACT_APP_PROJECT_ID, REACT_APP_MESSEGING_SENDER_ID, REACT_APP_APP_ID,

@@ -12,8 +12,10 @@ const ProdItem = ({ prod, photo }) => {
     <div className="product">
       <figure className="product-image">
         <Link to={`/products/${id}`}>
-          <img src={photo ? photo.url : 'nophoto'} alt={name} />
+          <img src={photo.url} alt={name} />
           <h2>{price}</h2>
+          <p>{category}</p>
+          <p>{quantity}</p>
         </Link>
       </figure>
     </div>
@@ -25,7 +27,7 @@ ProdItem.defaultProps = {
 
 ProdItem.propTypes = {
   prod: PropTypes.instanceOf(Object).isRequired,
-  photo: PropTypes.instanceOf(Object)
+  photo: PropTypes.instanceOf(Object),
 
 };
 

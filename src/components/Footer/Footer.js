@@ -37,18 +37,29 @@ const Footer = () => {
               <Col lg={10}>
                 <h4 className="eyebrow mb-2">Subscribe</h4>
 
-                <form className="input-group"
+                <form
+                  className="input-group"
+                  onSubmit={handleSubmit}
                   action="https://formspree.io/f/xjvjwerr"
                   method="POST"
                 >
-                  <input type="text" className="form-control form-control-lg" placeholder="Email" aria-label="Subscribe"
+                  <input
+                    className="form-control form-control-lg"
+                    placeholder="Email"
+                    id="email"
+                    aria-label="Subscribe"
+                    type="email"
                     name="_replyto"
                   />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
                   <div className="input-group-append">
-                    <Button className="btn btn-white" type="button">Subscribe</Button>
+                    <Button className="btn btn-white" type="submit">Subscribe</Button>
                   </div>
                 </form>
-
               </Col>
             </Row>
             <Row className="justify-content-end">

@@ -4,7 +4,7 @@ import {
   Products,
   Cart,
   Checkout,
-  Product,
+
   Errorpage,
 } from './pages';
 
@@ -15,9 +15,8 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
-        <Route path="/products" component={Products} exact>
-          <Route path="/products/:id" component={Product} />
-        </Route>
+        <Route path="/products" component={Products} />
+
         <Route path="*" component={Errorpage} />
       </Switch>
     </BrowserRouter>

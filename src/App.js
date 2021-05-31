@@ -1,6 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {
-  Home, Products, Cart, Checkout,
+  Home,
+  Products,
+  Cart,
+  Checkout,
+  Product,
+  Errorpage,
 } from './pages';
 
 function App() {
@@ -8,9 +13,12 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/products" component={Products} />
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
+        <Route path="/products" component={Products} exact>
+          <Route path="/products/:id" component={Product} />
+        </Route>
+        <Route path="*" component={Errorpage} />
       </Switch>
     </BrowserRouter>
   );

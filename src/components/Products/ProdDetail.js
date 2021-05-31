@@ -6,8 +6,10 @@ import ProdItem from './ProdItem';
 
 const ProdDetail = () => {
   const products = useSelector((state) => state.productsReducer.products?.data.products);
-  let product;
-  if (products) {
+  const photos = useSelector((state) => state.productsReducer.products?.data.photos);
+  let product; let foto;
+  if (products && photos) {
+    foto = destructureObjs(photos);
     product = destructureObjs(products);
   }
 
@@ -15,7 +17,10 @@ const ProdDetail = () => {
     <Col lg={9}>
       <Row className="gutter-2 gutter-lg-3">
         <Col className="col-6 col-md-4">
-          {product && product.map((prod) => <ProdItem key={prod.id} prod={prod} />)}
+          {product && product.map((prod) => {
+            const photo = foto.find((photObj) => photObj.product_id === prod.id);
+            return <ProdItem key={prod.id} prod={prod} photo={photo} />;
+          })}
         </Col>
       </Row>
     </Col>

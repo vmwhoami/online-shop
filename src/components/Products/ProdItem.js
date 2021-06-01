@@ -11,11 +11,12 @@ const ProdItem = ({ prod, photo }) => {
   return (
     <div className="product">
       <figure className="product-image">
-        <Link to={`/products/${id}`}>
+        <Link to={`/product/${id}`}>
           <img src={photo.url} alt={name} />
           <h2>{price}</h2>
           <p>{category}</p>
           <p>{quantity}</p>
+          <p>{name}</p>
         </Link>
       </figure>
     </div>

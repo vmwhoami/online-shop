@@ -4,7 +4,7 @@ import {
   Products,
   Cart,
   Checkout,
-
+  Product,
   Errorpage,
 } from './pages';
 
@@ -16,7 +16,10 @@ function App() {
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/products" component={Products} />
-
+        <Route path="/product/:id">
+          {' '}
+          <Product />
+        </Route>
         <Route path="*" component={Errorpage} />
       </Switch>
     </BrowserRouter>

@@ -6,6 +6,7 @@ import {
   Checkout,
   Product,
   Errorpage,
+  AddProduct,
 } from './pages';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/cart" component={Cart} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/products" component={Products} />
+        <Route path="/add-product" component={AddProduct} />
         <Route path="/product/:id">
           {' '}
           <Product />

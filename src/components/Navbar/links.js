@@ -17,7 +17,7 @@ export default [
   {
     id: 4,
     title: 'Add',
-    path: '/addprod',
+    path: '/add-product',
   },
 
 ];

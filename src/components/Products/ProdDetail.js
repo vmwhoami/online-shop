@@ -18,7 +18,7 @@ const ProdDetail = () => {
       <Row className="gutter-2 gutter-lg-3">
         <Col className="col-6 col-md-4">
           {product && product.map((prod) => {
-            const photo = foto.find((photObj) => photObj.product_id === prod.id);
+            const photo = foto.filter((photObj) => photObj.product_id === prod.id);
             return <ProdItem key={prod.id} prod={prod} photo={photo} />;
           })}
         </Col>

@@ -13,7 +13,7 @@ const ProdItem = ({ prod, photo }) => {
 
       <figure className="product-image">
         <Link to={`/product/${id}`}>
-          <img src={photo.url} alt={name} />
+          <img src={photo.length > 0 ? photo[0].url : 'undefined'} alt={name} />
         </Link>
       </figure>
       <div className="product-meta">
@@ -42,12 +42,12 @@ const ProdItem = ({ prod, photo }) => {
   );
 };
 ProdItem.defaultProps = {
-  photo: { url: 'empty' },
+  photo: [{ url: 'empty' }],
 };
 
 ProdItem.propTypes = {
   prod: PropTypes.instanceOf(Object).isRequired,
-  photo: PropTypes.instanceOf(Object),
+  photo: PropTypes.instanceOf(Array),
 };
 
 export default ProdItem;

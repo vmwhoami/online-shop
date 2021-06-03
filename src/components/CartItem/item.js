@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
-import PlusMinusButtons from './PlusMinusButtons'
+import PlusMinusButtons from './PlusMinusButtons';
 // import style from './item.module.css';
 // import PropTypes from 'prop-types';
 

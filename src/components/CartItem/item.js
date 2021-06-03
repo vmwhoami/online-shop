@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
+import PlusMinusButtons from './PlusMinusButtons'
 // import style from './item.module.css';
 // import PropTypes from 'prop-types';
 
@@ -20,11 +21,9 @@ const Item = () => (
             <span className="cartItemPrice">$120</span>
           </Col>
           <Col className="col-4 col-lg-2 text-center">
-            <div className="counter">
-              <span className="counterMinus iconMinus" />
-              <input type="text" name="qty-1" className="counterValue" value="2" min="1" max="10" />
-              <span className="counterPlus iconPlus" />
-            </div>
+
+            <PlusMinusButtons />
+
             <Col className="col-4 col-lg-2 text-center">
               <span className="cart-item-price">$240</span>
             </Col>

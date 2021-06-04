@@ -6,6 +6,7 @@ import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import getProducts from './redux/products/productsActions';
+import BreadCrubs from './components/UIcomp/BreadCrubs';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Layout = ({ children }) => {
       <Cart />
       <Container fluid className="px-0 w-100">
         <NavBar />
+        <BreadCrubs />
         {children}
         <Footer />
       </Container>

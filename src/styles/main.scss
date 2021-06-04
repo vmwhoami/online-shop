@@ -1,15 +1,7 @@
 
-:root {
-  --dark:#101010;
-  --navbar: #101010f2;
-  --faded: #ffffff99;
-  --green: #4F944F;
-  --greendark:#427b42;
-  --grey: #dddddd;
-  --greydark:#cacaca;
-  --greyborder:#c4c4c4;
-  --lg-br: 990px;
-}
+@import "~bootstrap/scss/bootstrap";
+ 
+ @import './variables';
 
  
  a{
@@ -18,7 +10,7 @@
 }
 
 .faded{
-  color: var(--faded);
+  color:  $faded;
 }
 
 .faded:hover{
@@ -27,29 +19,29 @@
 
 
 .btn-flat {
-  background-color: var(--green);
+  background-color: $green;
   border: none;
   color: white;
   text-transform: uppercase;
 }
 
 .btn-grey {
-  background-color: var(--grey);
-  border: var(--greyborder);
-  color: var(--dark);
+  background-color: $grey;
+  border: $greyborder;
+  color: $dark;
   text-transform: uppercase;
 }
 
 .btn-grey:hover{
   text-decoration: none;
-  color: var(--dark);
-  background-color: var(--greydark);
+  color: $dark;
+  background-color: $greydark;
 }
 
 .btn-flat:hover{
   text-decoration: none;
   color: white;
-  background-color: var(--greendark);
+  background-color: $greendark;
 }
 
 .pb-10, .py-10 {
@@ -112,7 +104,7 @@
 }
 
 .btn-white {
-  color: var(--dark) !important;
+  color: $dark!important;
   background-color: #fff !important;
   border-color: #fff !important;
   text-transform: uppercase;

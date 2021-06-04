@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
-import './styles/main.css';
+import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
 // import fire from './firebase/firebaseConfig';

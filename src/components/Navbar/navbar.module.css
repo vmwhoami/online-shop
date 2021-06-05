@@ -1,41 +1,33 @@
-.navbar{
+.navbar {
   width: 100%;
-   min-height: 5rem;
+  min-height: 5rem;
 }
 
-.header{
+.header {
   background: rgba(16, 16, 16, 0.95);
 }
- 
 
-.logo svg{
+.logo svg {
   height: 3rem;
   width: 200px;
 }
 
+.cart {
+  border: 2px solid white;
+}
 
- .cart{
-    
-   border: 2px solid white;
- }
+.svg {
+  fill: rgba(255, 255, 255, 0.6);
+  margin-right: 5px;
+}
 
-.svg{
-fill: rgba(255, 255, 255, 0.6);
-margin-right: 5px;
- }
- .svg svg{
-   display: flex;
-   width: 1rem;
-   height:1rem;
- 
- }
- 
+.svg svg {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+}
 
-
- .quantity{
-   padding: 5px;
-   margin-left: 20px;
-  
- }
-
- 
+.quantity {
+  padding: 5px;
+  margin-left: 20px;
+}

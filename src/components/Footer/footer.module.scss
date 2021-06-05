@@ -1,8 +1,9 @@
-.bgdark{
-  background-color: #101010f2 ;
+.bgdark {
+  background-color: #101010f2;
 }
+
 .separated > * {
-   box-shadow: -1px -1px 0px 0px rgb(255 ,255 ,255 / 10%);
+  box-shadow: -1px -1px 0 0 rgb(255, 255, 255);
 }
 
 .separated > *:not(:last-child) {

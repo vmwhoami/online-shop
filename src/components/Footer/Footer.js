@@ -4,7 +4,7 @@ import {
   Container, Row, Col, Button, Nav,
 } from 'react-bootstrap';
 import { TiSocialFacebook, AiOutlineTwitter, GrYoutube } from 'react-icons/all';
-import style from './footer.module.css';
+import style from './footer.module.scss';
 
 const Footer = () => {
   const [state, handleSubmit] = useForm('xjvjwerr');

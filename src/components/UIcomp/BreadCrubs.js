@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const BreadCrubs = () => (
+const BreadCrubs = ({ first, second }) => (
   <section className="breadcrumbs separator-bottom">
     <div className="container">
       <div className="row">
@@ -9,7 +10,8 @@ const BreadCrubs = () => (
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-              <li className="breadcrumb-item active">Listing</li>
+              <li className="breadcrumb-item active"><Link to={first}>{first}</Link></li>
+              {second ? <li className="breadcrumb-item active"><Link to={second}>{second}</Link></li> : null}
             </ol>
           </nav>
         </div>
@@ -18,4 +20,12 @@ const BreadCrubs = () => (
   </section>
 );
 
+BreadCrubs.defaultProps = {
+  second: null,
+};
+
+BreadCrubs.propTypes = {
+  first: PropTypes.string.isRequired,
+  second: PropTypes.string,
+};
 export default BreadCrubs;

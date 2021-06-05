@@ -1,0 +1,10 @@
+.bgdark{
+  background-color: #101010f2 ;
+}
+.separated > * {
+   box-shadow: -1px -1px 0px 0px rgb(255 ,255 ,255 / 10%);
+}
+
+.separated > *:not(:last-child) {
+  margin-bottom: 0 !important;
+}

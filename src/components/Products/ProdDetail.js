@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import destructureObjs from '../../utils/destructureObj';
 import ProdItem from './ProdItem';
+import BreadCrubs from '../UIcomp/BreadCrubs';
 
 const ProdDetail = () => {
   const products = useSelector((state) => state.productsReducer.products?.data.products);
@@ -14,17 +15,19 @@ const ProdDetail = () => {
   }
 
   return (
-    <Col lg={9}>
-      <Row className="gutter-2 gutter-lg-3">
-        <Col className="col-6 col-md-4">
-          {product && product.map((prod) => {
-            const photo = foto.filter((photObj) => photObj.product_id === prod.id);
-            return <ProdItem key={prod.id} prod={prod} photo={photo} />;
-          })}
-        </Col>
-      </Row>
-    </Col>
-
+    <>
+      <BreadCrubs first="Products" />
+      <Col lg={9}>
+        <Row className="gutter-2 gutter-lg-3">
+          <Col className="col-6 col-md-4">
+            {product && product.map((prod) => {
+              const photo = foto.filter((photObj) => photObj.product_id === prod.id);
+              return <ProdItem key={prod.id} prod={prod} photo={photo} />;
+            })}
+          </Col>
+        </Row>
+      </Col>
+    </>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import ProdImages from './ProdImages';
 
 const ProdItem = ({ prod, photo }) => {
   const {
@@ -10,12 +11,9 @@ const ProdItem = ({ prod, photo }) => {
 
   return (
     <div className="product">
-
-      <figure className="product-image">
-        <Link to={`/product/${id}`}>
-          <img src={photo.length > 0 ? photo[0].url : 'undefined'} alt={name} />
-        </Link>
-      </figure>
+      <Link to={`/product/${id}`}>
+        <ProdImages photo={photo} />
+      </Link>
       <div className="product-meta">
         <h3 className="product-title">
           {' '}

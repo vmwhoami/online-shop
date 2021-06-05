@@ -18,7 +18,7 @@ const CategoryTitle = ({ category, quantity }) => (
           <div className="dropdown">
             <a
               className="btn btn-outline-secondary
-              btn-sm dropdown-toggle"
+              btn-sm dropdown-toggle rounded-0 px-4 py-3"
               href="#!"
               role="button"
               id="dropdownMenuLink"
@@ -26,15 +26,12 @@ const CategoryTitle = ({ category, quantity }) => (
               aria-haspopup="true"
               aria-expanded="false"
             >
-              What
-              {'&apos;'}
-              s New
+              What&apos;s New
             </a>
 
             <div
               className="dropdown-menu"
             >
-
               <a className="dropdown-item" href="#!">Price high to low</a>
               <a className="dropdown-item" href="#!">Price low to high</a>
             </div>

@@ -28,8 +28,14 @@
 .btn-white {
   color: $dark !important;
   background-color: #fff !important;
-  border-color: #fff !important;
+  border-color: #fff;
   text-transform: uppercase;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
+}
+
+
+.dropdown-toggle{
+  
+  border-radius: 0 ;
 }

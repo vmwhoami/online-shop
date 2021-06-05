@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImCart } from 'react-icons/all';
+import { FaShoppingCart } from 'react-icons/all';
 import { Link } from 'react-router-dom';
 import {
   Container, Nav, Navbar,
@@ -30,17 +30,17 @@ const NavBar = () => {
                 );
               })}
             </Nav>
-            <Navbar.Brand className={`col d-flex justify-content-center ${style.logo}`}>
+            <Navbar.Brand className={`col d-lg-flex justify-content-center ${style.logo}`}>
               <Link to="/">
                 <Victoria />
               </Link>
             </Navbar.Brand>
-            <Nav onClick={openCart} className="col justify-content-end">
+            <Nav onClick={openCart} className="col justify-content-end d-sm-flex">
               <Nav.Link eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white">
                 <span className="px-1"> Cart</span>
                 <span className={style.svg}>
                   {' '}
-                  <ImCart />
+                  <FaShoppingCart />
                   {' '}
                 </span>
               </Nav.Link>

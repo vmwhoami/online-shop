@@ -5,10 +5,7 @@
     a{
       color: $dark;
     }
-    &::before {
- 
-      content: escape-svg($breadcrumb-divider);
-    }
+   
 }
 
 .separator-bottom{

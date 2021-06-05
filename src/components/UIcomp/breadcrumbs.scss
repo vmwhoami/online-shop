@@ -1,8 +1,13 @@
+@import '../../styles/variables';
 .breadcrumb{
  background-color: transparent !important;
  padding-top: 2rem !important;
     a{
-      color: #101010;
+      color: $dark;
+    }
+    &::before {
+ 
+      content: escape-svg($breadcrumb-divider);
     }
 }
 

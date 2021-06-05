@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-@import './variables';
+@import './variables','./btns','./footer','./cart','./breadcrumbs';
 a {
   cursor: pointer;
   text-decoration: none;
@@ -13,31 +13,6 @@ a {
   color: white !important;
 }
 
-.btn-flat {
-  background-color: $green;
-  border: none;
-  color: white;
-  text-transform: uppercase;
-}
-
-.btn-grey {
-  background-color: $grey;
-  border: $greyborder;
-  color: $dark;
-  text-transform: uppercase;
-}
-
-.btn-grey:hover {
-  text-decoration: none;
-  color: $dark;
-  background-color: $greydark;
-}
-
-.btn-flat:hover {
-  text-decoration: none;
-  color: white;
-  background-color: $greendark;
-}
 
 .pb-10,
 .py-10 {
@@ -108,11 +83,3 @@ a {
   color: #fff !important;
 }
 
-.btn-white {
-  color: $dark !important;
-  background-color: #fff !important;
-  border-color: #fff !important;
-  text-transform: uppercase;
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}

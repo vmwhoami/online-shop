@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './breadcrumbs.scss';
 import { Link } from 'react-router-dom';
 
 const BreadCrubs = ({ first, second }) => (

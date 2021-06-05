@@ -11,7 +11,7 @@ const Products = () => (
   <Layout>
     <Container>
       <BreadCrubs first="Products" />
-      <CategoryTitle category="Yifu" quantity={20} />
+      <CategoryTitle category="Yifu" quantity={10} />
       <ProdDetails />
     </Container>
   </Layout>

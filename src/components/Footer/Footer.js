@@ -4,12 +4,11 @@ import {
   Container, Row, Col, Button, Nav,
 } from 'react-bootstrap';
 import { TiSocialFacebook, AiOutlineTwitter, GrYoutube } from 'react-icons/all';
-import style from './footer.module.scss';
 
 const Footer = () => {
   const [state, handleSubmit] = useForm('xjvjwerr');
   return (
-    <footer className={`${style.bgdark} text-white py-0`}>
+    <footer className="bgdark text-white py-0">
       <Container>
         <Row className="overflow-hidden">
           <Col lg={6} className="py-10">

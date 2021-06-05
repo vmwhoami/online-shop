@@ -3,7 +3,7 @@ import { GrFormClose } from 'react-icons/all';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
-import style from './cart.module.scss';
+import './cart.scss';
 import switchCart from '../../redux/cart/cartActions';
 import CartButtons from './CartButtons';
 import CartItems from './items';
@@ -27,7 +27,7 @@ const Cart = () => {
             role="button"
             onKeyDown={openCloseCart}
             onClick={() => dispatch(switchCart())}
-            className={style.background}
+            className="background"
             tabIndex={0}
             aria-label="Modal fade"
           />
@@ -43,11 +43,11 @@ const Cart = () => {
               default: { duration: 0.3 },
             }}
             exit={{ opacity: 0 }}
-            className={style.content}
+            className="content"
           >
-            <div className="d-flex w-100 justify-content-between">
+            <div className="d-flex w-100 justify-content-between align-items-center">
               <h2 className="text-uppercase">Cart</h2>
-              <Button className={style.close} onClick={openCloseCart}>
+              <Button className="close" onClick={openCloseCart}>
                 <GrFormClose />
               </Button>
             </div>

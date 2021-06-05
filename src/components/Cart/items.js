@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './cart.module.scss';
+import './cart.scss';
 import Item from '../CartItem/item';
 
 const CartItems = () => (
-  <div className={style.cartitems}>
+  <div className="cartitems">
     <Item />
   </div>
 

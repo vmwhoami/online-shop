@@ -3,17 +3,16 @@ import PropTypes from 'prop-types';
 
 const ProdImages = ({ photo }) => {
   const [index, changeIndex] = useState(0);
-  // const handleHover = () => {
-  //   changeIndex(1);
-  // };
-  console.log(photo);
+  const handleEnter = () => changeIndex(1);
+  const hanleLeave = () => changeIndex(0);
+  const foto = photo[index];
   return (
     <figure
       className="product-image"
-    // onMouseEnter={handleHover}
+      onMouseEnter={handleEnter}
+      onMouseLeave={hanleLeave}
     >
-
-      {/* <img src={photo[index].url} alt={photo[index].url} /> */}
+      <img src={foto ? foto.url : null} alt="product" />
     </figure>
   );
 };

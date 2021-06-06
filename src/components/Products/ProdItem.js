@@ -4,9 +4,9 @@ import { Button, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProdImages from './ProdImages';
 
-const ProdItem = ({ prod, photo }) => {
+const ProdItem = ({ prod, photo, category }) => {
   const {
-    id, name, category, price, quantity,
+    id, name, price, quantity,
   } = prod;
 
   return (
@@ -17,20 +17,22 @@ const ProdItem = ({ prod, photo }) => {
         </Link>
         <div className="product-meta">
           <h3 className="product-title">
-            {' '}
             <Link to={`/product/${id}`}>
               {name}
             </Link>
           </h3>
           <div className="product-price">
-            <span>{price}</span>
             <span>
-              {category}
+              {price}
+              $
             </span>
-
             <span>
-              {' '}
+              {category.name}
+            </span>
+            <span>
               {quantity}
+              {' '}
+              Left
             </span>
             <Button className="product-action">
               Add to cart
@@ -48,6 +50,7 @@ ProdItem.defaultProps = {
 ProdItem.propTypes = {
   prod: PropTypes.instanceOf(Object).isRequired,
   photo: PropTypes.instanceOf(Array),
+  category: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default ProdItem;

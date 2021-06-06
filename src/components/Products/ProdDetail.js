@@ -14,15 +14,13 @@ const ProdDetail = () => {
   }
 
   return (
-
-    <Col lg={9}>
+    <Col lg={9} className="mt-5">
       <Row className="gutter-2 gutter-lg-3">
-        <Col className="col-6 col-md-4">
-          {product && product.map((prod) => {
-            const photo = foto.filter((photObj) => photObj.product_id === prod.id);
-            return <ProdItem key={prod.id} prod={prod} photo={photo} />;
-          })}
-        </Col>
+        {product && product.map((prod) => {
+          const photo = foto.filter((photObj) => photObj.product_id === prod.id);
+          return <ProdItem key={prod.id} prod={prod} photo={photo} />;
+        })}
+
       </Row>
     </Col>
 

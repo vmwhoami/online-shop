@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import LinksData from './links';
-import style from './navbar.module.css';
+
 import Victoria from '../SVG';
 import switchCart from '../../redux/cart/cartActions';
 // import PropTypes from 'prop-types';
@@ -17,7 +17,7 @@ const NavBar = () => {
     dispatch(switchCart());
   };
   return (
-    <header className={`header header-dark ${style.header}`}>
+    <header className="header header-dark  header">
       <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav " />
@@ -30,15 +30,15 @@ const NavBar = () => {
                 );
               })}
             </Nav>
-            <Navbar.Brand className={`col d-lg-flex justify-content-center ${style.logo}`}>
+            <Navbar.Brand className="col d-lg-flex justify-content-center logo">
               <Link to="/">
                 <Victoria />
               </Link>
             </Navbar.Brand>
-            <Nav onClick={openCart} className="col justify-content-end d-sm-flex">
+            <Nav onClick={openCart} className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
               <Nav.Link eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white">
                 <span className="px-1"> Cart</span>
-                <span className={style.svg}>
+                <span className="svg">
                   {' '}
                   <FaShoppingCart />
                   {' '}

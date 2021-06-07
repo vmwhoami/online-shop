@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
-@import './variables','./navbar','./btns' , './products';
+@import './variables', './btns'  ;
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -12,7 +13,6 @@ a {
 .faded:hover {
   color: white !important;
 }
-
 
 .pb-10,
 .py-10 {
@@ -82,4 +82,3 @@ a {
   border-color: rgba(255, 255, 255, 0.5) !important;
   color: #fff !important;
 }
-

@@ -1,15 +1,15 @@
 @import '../../styles/variables';
 
-.breadcrumb{
- background-color: transparent !important;
- padding-top: 2rem !important;
-    a{
-      color: $dark;
-    }
-   
+.breadcrumb {
+  background-color: transparent !important;
+  padding-top: 2rem !important;
+
+  a {
+    color: $dark;
+  }
 }
 
-.separator-bottom{
+.separator-bottom {
   border-width: 0;
   border-color: $grey;
   border-style: solid;

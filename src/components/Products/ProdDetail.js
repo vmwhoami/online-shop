@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import destructureObjs from '../../utils/destructureObj';
 import ProdItem from './ProdItem';
+import './products.scss';
 
 const ProdDetail = () => {
   const products = useSelector((state) => state.productsReducer.products?.data.products);

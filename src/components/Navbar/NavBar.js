@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import LinksData from './links';
-
+import './navbar.scss';
 import Victoria from '../SVG';
 import switchCart from '../../redux/cart/cartActions';
 // import PropTypes from 'prop-types';

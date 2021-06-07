@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import './footer.scss';
 import {
   Container, Row, Col, Button, Nav,
 } from 'react-bootstrap';

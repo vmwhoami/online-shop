@@ -3,7 +3,7 @@ import { GrFormClose } from 'react-icons/all';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
-
+import './cart.scss';
 import switchCart from '../../redux/cart/cartActions';
 import CartButtons from './CartButtons';
 import CartItems from './items';

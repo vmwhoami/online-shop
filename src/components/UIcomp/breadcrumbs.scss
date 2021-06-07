@@ -1,4 +1,5 @@
-@import './variables';
+@import '../../styles/variables';
+
 .breadcrumb{
  background-color: transparent !important;
  padding-top: 2rem !important;
@@ -10,7 +11,7 @@
 
 .separator-bottom{
   border-width: 0;
-  border-color: #dddddd;
+  border-color: $grey;
   border-style: solid;
   border-bottom-width: 1px;
 }

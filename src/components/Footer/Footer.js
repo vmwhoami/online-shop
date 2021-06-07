@@ -56,7 +56,7 @@ const Footer = () => {
                     errors={state.errors}
                   />
                   <div className="input-group-append">
-                    <Button className="btn btn-white" type="submit">Subscribe</Button>
+                    <Button className="btn btn-white border" type="submit">Subscribe</Button>
                   </div>
                 </form>
               </Col>

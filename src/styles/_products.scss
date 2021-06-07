@@ -45,5 +45,8 @@ text-transform: uppercase;
 &-action{
   background-color: $faded !important;
   border-color: $dark !important;
+  &:hover{
+    background-color: $greydark !important;
+  }
 }
 }

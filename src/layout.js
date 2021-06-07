@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
-import getProducts from './redux/products/productsActions';
+import { getProducts } from './redux/products/productsActions';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();

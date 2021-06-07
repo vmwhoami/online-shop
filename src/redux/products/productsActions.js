@@ -1,11 +1,14 @@
-import { GET_PRODUCTS, GET_PRODUCTS_ERROR } from './productsTypes';
+import { GET_PRODUCTS, GET_PRODUCTS_ERROR, GET_A_PRODUCT } from './productsTypes';
 import axios from '../axios';
 
 const getAllProducts = (obj) => ({
   type: GET_PRODUCTS,
   payload: obj,
 });
-
+const getProduct = (obj) => ({
+  type: GET_A_PRODUCT,
+  payload: obj,
+});
 const getProductsError = () => ({
   type: GET_PRODUCTS_ERROR,
 });
@@ -17,8 +20,15 @@ const getProducts = () => async (dispatch) => {
   } catch (err) {
     dispatch(getProductsError());
   }
-
-  // products.on('value', snapshot => dispatch(getAllProducts(snapshot.val() || {})))
 };
 
-export default getProducts;
+const getAProduct = () => async (dispatch) => {
+  try {
+    const data = await axios.get('/products.json');
+    dispatch(getProduct(data));
+  } catch (err) {
+    dispatch(getProductsError());
+  }
+};
+
+export { getProducts, getAProduct };

@@ -4,7 +4,9 @@ import { Button, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProdImages from './ProdImages';
 
-const ProdItem = ({ prod, photo, category }) => {
+const ProdItem = ({
+  prod, photo, category, parent,
+}) => {
   const {
     id, name, price, quantity,
   } = prod;
@@ -21,15 +23,17 @@ const ProdItem = ({ prod, photo, category }) => {
               {name}
             </Link>
           </h3>
-          <div className="product-price">
-            <span>
+          <div className="product-container d-flex flex-column">
+            <span className="product-category">
+              {category.name}
+              /
+              {parent.name}
+            </span>
+            <span className="product-price">
               {price}
               $
             </span>
-            <span>
-              {category.name}
-            </span>
-            <span>
+            <span className="product-quantity">
               {quantity}
               {' '}
               Left
@@ -51,6 +55,7 @@ ProdItem.propTypes = {
   prod: PropTypes.instanceOf(Object).isRequired,
   photo: PropTypes.instanceOf(Array),
   category: PropTypes.instanceOf(Object).isRequired,
+  parent: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default ProdItem;

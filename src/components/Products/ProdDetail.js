@@ -21,7 +21,17 @@ const ProdDetail = () => {
         {product && product.map((prod) => {
           const photo = foto.filter((photObj) => photObj.product_id === prod.id);
           const category = categories.find((catObj) => catObj.id === prod.category);
-          return <ProdItem key={prod.id} prod={prod} photo={photo} category={category} />;
+          const parent = categories.find((catObj) => category.parent === catObj.id);
+
+          return (
+            <ProdItem
+              key={prod.id}
+              prod={prod}
+              photo={photo}
+              category={category}
+              parent={parent}
+            />
+          );
         })}
 
       </Row>

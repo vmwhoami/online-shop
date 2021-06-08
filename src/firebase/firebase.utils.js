@@ -23,5 +23,3 @@ const initFirebase = () => {
 initFirebase();
 
 export const auth = firebase.auth();
-
-

@@ -1,10 +1,12 @@
 import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 import './footer.scss';
 import {
-  Container, Row, Col, Button, Nav,
+  Container, Row, Col, Button,
 } from 'react-bootstrap';
-import { TiSocialFacebook, AiOutlineTwitter, GrYoutube } from 'react-icons/all';
+
+import FormInput from '../formInput/form-input';
+import SocialLinks from './socialLinks';
 
 const Footer = () => {
   const [state, handleSubmit] = useForm('xjvjwerr');
@@ -36,42 +38,35 @@ const Footer = () => {
             <Row className="justify-content-end">
               <Col lg={10}>
                 <h4 className="eyebrow mb-2">Subscribe</h4>
-
                 <form
                   className="input-group"
                   onSubmit={handleSubmit}
                   action="https://formspree.io/f/xjvjwerr"
                   method="POST"
                 >
-                  <input
-                    className="form-control form-control-lg"
-                    placeholder="Email"
-                    id="email"
-                    aria-label="Subscribe"
-                    type="email"
-                    name="_replyto"
-                  />
-                  <ValidationError
-                    prefix="Email"
-                    field="email"
-                    errors={state.errors}
-                  />
-                  <div className="input-group-append">
-                    <Button className="btn btn-white border" type="submit">Subscribe</Button>
-                  </div>
+                  {state.succeeded ? <p className="text-upperase">Thank you for your subscription!</p>
+                    : (
+                      <>
+                        <FormInput
+                          inputClass="form-control form-control-lg"
+                          groupClass="w-75 d-flex"
+                          placeholder="Email"
+                          id="email"
+                          aria-label="Subscribe"
+                          type="email"
+                          name="_replyto"
+
+                        />
+                        <div className="input-group-append">
+                          <Button className="btn btn-white border" type="submit">Subscribe</Button>
+                        </div>
+                      </>
+                    )}
+
                 </form>
               </Col>
             </Row>
-            <Row className="justify-content-end">
-              <Col className="col-lg-10">
-                <h4 className="eyebrow mt-4">Follow us</h4>
-                <Nav className="nav-icons">
-                  <a className="nav-link h4 text-white pl-0 " target="_blank" href="https://www.facebook.com/vmwhoami" rel="noreferrer"><TiSocialFacebook>f</TiSocialFacebook></a>
-                  <a className="nav-link h4 text-white  pl-0 " target="_blank" href="https://twitter.com/vmwhoami" rel="noreferrer"><AiOutlineTwitter>t</AiOutlineTwitter></a>
-                  <a className="nav-link h4 text-white  pl-0 " target="_blank" href="https://www.youtube.com/user/vmwhoiam/videos" rel="noreferrer"><GrYoutube>y</GrYoutube></a>
-                </Nav>
-              </Col>
-            </Row>
+            <SocialLinks />
           </Col>
         </Row>
       </Container>

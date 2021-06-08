@@ -3,11 +3,11 @@
 .navbar {
   width: 100%;
   min-height: 5rem;
-}
-
-.header {
+  position: fixed !important;
   background: $dark;
 }
+
+ 
 
 .logo svg {
   height: 3rem;

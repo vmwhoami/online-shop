@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Cart />
-      <Container fluid className="px-0 w-100">
+      <Container fluid className="px-0 w-100 py-10">
         <NavBar />
         {children}
         <Footer />

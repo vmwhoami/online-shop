@@ -1,32 +1,35 @@
 import React from 'react';
+import './formInput.scss';
 import PropTypes from 'prop-types';
 
 const FormInput = ({
-  handleChange, classnume, label, ...otherProps
+  groupClass, inputClass, handleChange, labelClass, label, ...otherProps
 }) => (
-  <div className="group">
+  <div className={groupClass}>
 
     {
       label
         ? (
-          <label htmlFor={label} className={classnume || null}>
+          <label htmlFor={label} className={labelClass || null}>
             { label}
           </label>
         )
         : null
     }
     { /* eslint-disable-next-line  */}
-    <input id={label} className="form-input" onChange={handleChange} {...otherProps} />
+    <input id={label} className={inputClass} onChange={handleChange} {...otherProps} />
   </div>
 );
 
 FormInput.defaultProps = {
   label: null,
-  classnume: null,
+  labelClass: null,
 };
 FormInput.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  classnume: PropTypes.string,
+  groupClass: PropTypes.string.isRequired,
+  inputClass: PropTypes.string.isRequired,
+  labelClass: PropTypes.string,
   label: PropTypes.string,
 };
 

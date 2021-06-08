@@ -37,7 +37,7 @@ const Footer = () => {
           <Col lg={6} className="py-10">
             <Row className="justify-content-end">
               <Col lg={10}>
-                <h4 className="eyebrow mb-2">Subscribe</h4>
+                <h4 className="eyebrow mb-2">{state.succeeded ? 'Subscribed' : 'Subscribe'}</h4>
                 <form
                   className="input-group"
                   onSubmit={handleSubmit}

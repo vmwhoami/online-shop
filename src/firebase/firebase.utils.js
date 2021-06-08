@@ -1,5 +1,5 @@
-import * as firebase from 'firebase';
-// import '@react-firebase/auth';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 // import '@react-firebase/database';
 
 const {
@@ -22,4 +22,6 @@ const initFirebase = () => {
 };
 initFirebase();
 
-export { firebase };
+export const auth = firebase.auth();
+
+

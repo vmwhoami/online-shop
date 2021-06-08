@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { firebase } from '../firebase/firebaseConfig';
 import '@react-firebase/auth';
 // const getToken = async () => {
 //   const token = await firebase.auth().currentUser.getIdToken()

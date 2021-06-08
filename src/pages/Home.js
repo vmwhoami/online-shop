@@ -1,8 +1,6 @@
 import React from 'react';
-
-// import PropTypes from 'prop-types';
 import Layout from '../layout';
-// import firebase from '../firebase/firebaseConfig';
+
 
 const Home = () => (
   <Layout>

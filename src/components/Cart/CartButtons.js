@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CartButtons = ({ openCloseCart }) => (
-  <div className="d-flex w-100 bg-danger ">
+  <div className="d-flex w-100">
     <Link to="/cart" className="btn-grey py-3 w-100 text-center" onClick={() => openCloseCart()}>
       View Cart
     </Link>

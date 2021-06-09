@@ -13,7 +13,11 @@
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 24000;
-  min-width:  30vw;
-  min-height: 60vh;
+  min-width:  35vw;
+  min-height: 65vh;
   background-color: white;
+}
+
+.btn-flat{
+  background-color: #4f944f !important;
 }

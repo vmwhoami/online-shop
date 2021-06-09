@@ -3,7 +3,7 @@ import './RegAuth.scss';
 import { GrFormClose } from 'react-icons/all';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Row, Button } from 'react-bootstrap';
+import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import FormInput from '../formInput/form-input';
 
@@ -31,16 +31,38 @@ const RegAuth = () => {
             exit={{ opacity: 1 }}
             className="regauthent"
           >
-            <Row className="d-flex mx-0 p-2 align-items-center w-100 justify-content-between">
+            <Row className="d-flex mx-0 p-4 align-items-center w-100 justify-content-between">
               <h5 className="text-uppercase">Login</h5>
               <Button className="close" onClick={() => dispatch(switchLogin())}>
                 <GrFormClose />
               </Button>
             </Row>
-            <form>
-              <FormInput label="Email" type="email" />
-              <FormInput label="Password" type="password" />
-            </form>
+            <Form>
+              <Form.Group className="mb-3 d-flex flex-column">
+                <FormInput
+                  groupClass="d-flex flex-column px-4"
+                  inputClass="p-3 border border-success"
+                  label="Email adress"
+                  type="email"
+                  labelClass="text-uppercase font-weight-light"
+                />
+                <FormInput
+                  groupClass="d-flex flex-column px-4 pt-3"
+                  inputClass="p-3  border border-success"
+                  labelClass="text-uppercase font-weight-light"
+                  label="Password"
+                  type="password"
+                />
+                <Form.Group className="d-flex flex-column px-4 pt-5">
+                  <Button
+                    className="btn-flat py-3  text-center rounded-0"
+                    type="submit"
+                  >
+                    Sign In
+                  </Button>
+                </Form.Group>
+              </Form.Group>
+            </Form>
           </motion.div>
         </>
       )}

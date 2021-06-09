@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import './cart.scss';
-import switchCart from '../../redux/cart/cartActions';
+import { switchCart } from '../../redux/ui/uiActions';
 import CartButtons from './CartButtons';
 import CartItems from './items';
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cartReducer.cart);
+  const cart = useSelector((state) => state.uiReducer.cart);
   const dispatch = useDispatch();
   const openCloseCart = () => {
     dispatch(switchCart());

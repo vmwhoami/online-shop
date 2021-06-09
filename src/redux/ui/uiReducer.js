@@ -13,7 +13,7 @@ const uiReducer = (state = initial, action) => {
       };
     case LOGIN_SWITCH:
       return {
-        ...state, cart: !state.loginInput,
+        ...state, loginInput: !state.loginInput,
       };
     default:
       return state;

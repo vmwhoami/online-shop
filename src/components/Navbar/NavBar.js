@@ -8,13 +8,17 @@ import { useDispatch } from 'react-redux';
 import LinksData from './links';
 import './navbar.scss';
 import Victoria from '../SVG';
-import switchCart from '../../redux/cart/cartActions';
+import { switchLogin, switchCart } from '../../redux/ui/uiActions';
 // import PropTypes from 'prop-types';
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const openCart = () => {
     dispatch(switchCart());
+  };
+
+  const openLogin = () => {
+    dispatch(switchLogin());
   };
   return (
     <header className="header header-dark  header">
@@ -35,8 +39,11 @@ const NavBar = () => {
                 <Victoria />
               </Link>
             </Navbar.Brand>
-            <Nav onClick={openCart} className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
-              <Nav.Link eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white">
+
+            <Nav className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
+              <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Login</Nav.Link>
+              <Nav.Link onClick={openCart} eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white">
+
                 <span className="px-1"> Cart</span>
                 <span className="svg">
                   {' '}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaShoppingCart } from 'react-icons/all';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
   Container, Nav, Navbar,
 } from 'react-bootstrap';
@@ -30,7 +30,7 @@ const NavBar = () => {
               {LinksData.map((link) => {
                 const { id, title, path } = link;
                 return (
-                  <Link key={id} to={path} className="text-uppercase .faded">{title}</Link>
+                  <NavLink key={id} to={path} className="text-uppercase faded px-2">{title}</NavLink>
                 );
               })}
             </Nav>

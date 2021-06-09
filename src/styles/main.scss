@@ -3,11 +3,12 @@
 
 a {
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .faded {
   color: $faded;
+   
 }
 
 .faded:hover {

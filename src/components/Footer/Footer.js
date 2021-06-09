@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from '@formspree/react';
 import './footer.scss';
 import {
@@ -13,11 +13,12 @@ const Footer = () => {
   const [state, handleSubmit] = useForm('xjvjwerr');
   const subscribed = useSelector((state) => state.uiReducer.subscribed);
   const dispatch = useDispatch();
-  const liftState = (e) => {
-    handleSubmit(e);
-    dispatch(switchSubscribed());
-  };
-  console.log(state);
+  useEffect(() => {
+    if (state.succeeded) {
+      dispatch(switchSubscribed());
+    }
+  }, [state.succeeded]);
+
   return (
     <footer className="bgdark text-white py-0">
       <Container>
@@ -48,7 +49,7 @@ const Footer = () => {
                 <h4 className="eyebrow mb-2">{subscribed ? 'Subscribed' : 'Subscribe'}</h4>
                 <form
                   className="input-group"
-                  onSubmit={liftState}
+                  onSubmit={handleSubmit}
                   action="https://formspree.io/f/xjvjwerr"
                   method="POST"
                 >

@@ -26,8 +26,10 @@ const RegAuth = () => {
             className="regauthbackground"
           />
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: 1 }}
+            initial={{ opacity: 0, x: '-50%' }}
+            animate={{
+              opacity: 1, y: '-50%', x: '-50%', transition: 1,
+            }}
             exit={{ opacity: 1 }}
             className="regauthent"
           >
@@ -55,7 +57,7 @@ const RegAuth = () => {
                 />
                 <Form.Group className="d-flex flex-column px-4 pt-5">
                   <Button
-                    className="btn-flat py-3  text-center rounded-0"
+                    className="btn-flat py-3  text-center rounded-0 border-0"
                     type="submit"
                   >
                     Sign In

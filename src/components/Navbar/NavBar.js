@@ -30,7 +30,7 @@ const NavBar = () => {
               {LinksData.map((link) => {
                 const { id, title, path } = link;
                 return (
-                  <Nav.Link key={id} href={path} className="text-uppercase .faded">{title}</Nav.Link>
+                  <Link key={id} to={path} className="text-uppercase .faded">{title}</Link>
                 );
               })}
             </Nav>

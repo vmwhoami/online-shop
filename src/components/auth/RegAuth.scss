@@ -20,4 +20,7 @@
 
 .btn-flat{
   background-color: #4f944f !important;
+  &:hover{
+    background-color: #3D733D !important;
+  }
 }

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     <>
       <Cart />
       <RegAuth />
-      <Container fluid className="px-0 w-100 py-10">
+      <Container fluid className="px-0 w-100 pt-10">
         <NavBar />
         {children}
         <Footer />

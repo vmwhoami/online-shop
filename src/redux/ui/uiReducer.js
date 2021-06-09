@@ -1,8 +1,9 @@
-import { CART_SWITCH, LOGIN_SWITCH } from './uiTypes';
+import { CART_SWITCH, LOGIN_SWITCH, SUBSCRIPTION_SWITCH } from './uiTypes';
 
 const initial = {
   cart: false,
   loginInput: false,
+  subscribed: false,
 };
 
 const uiReducer = (state = initial, action) => {
@@ -14,6 +15,10 @@ const uiReducer = (state = initial, action) => {
     case LOGIN_SWITCH:
       return {
         ...state, loginInput: !state.loginInput,
+      };
+    case SUBSCRIPTION_SWITCH:
+      return {
+        ...state, subscribed: !state.subscribed,
       };
     default:
       return state;

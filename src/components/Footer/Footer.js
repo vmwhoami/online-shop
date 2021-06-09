@@ -4,12 +4,20 @@ import './footer.scss';
 import {
   Container, Row, Col, Button,
 } from 'react-bootstrap';
-
+import { useSelector, useDispatch } from 'react-redux';
 import FormInput from '../formInput/form-input';
 import SocialLinks from './socialLinks';
+import { switchSubscribed } from '../../redux/ui/uiActions';
 
 const Footer = () => {
   const [state, handleSubmit] = useForm('xjvjwerr');
+  const subscribed = useSelector((state) => state.uiReducer.subscribed);
+  const dispatch = useDispatch();
+  const liftState = (e) => {
+    handleSubmit(e);
+    dispatch(switchSubscribed());
+  };
+  console.log(state);
   return (
     <footer className="bgdark text-white py-0">
       <Container>
@@ -37,14 +45,14 @@ const Footer = () => {
           <Col lg={6} className="py-10">
             <Row className="justify-content-end">
               <Col lg={10}>
-                <h4 className="eyebrow mb-2">{state.succeeded ? 'Subscribed' : 'Subscribe'}</h4>
+                <h4 className="eyebrow mb-2">{subscribed ? 'Subscribed' : 'Subscribe'}</h4>
                 <form
                   className="input-group"
-                  onSubmit={handleSubmit}
+                  onSubmit={liftState}
                   action="https://formspree.io/f/xjvjwerr"
                   method="POST"
                 >
-                  {state.succeeded ? <p className="text-upperase">Thank you for your subscription!</p>
+                  {subscribed ? <p className="text-upperase">Thank you for your subscription!</p>
                     : (
                       <>
                         <FormInput

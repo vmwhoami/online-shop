@@ -1,0 +1,19 @@
+.regauthbackground{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d1c;
+  backdrop-filter: blur(2px) brightness(80%);
+  z-index: 23000;
+}
+
+.regauthent{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 24000;
+  min-width:  30vw;
+  min-height: 60vh;
+  background-color: white;
+}

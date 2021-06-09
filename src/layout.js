@@ -6,6 +6,7 @@ import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { getProducts } from './redux/products/productsActions';
+import RegAuth from './components/auth/RegAuth';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Cart />
+      <RegAuth />
       <Container fluid className="px-0 w-100 py-10">
         <NavBar />
         {children}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RegAuth.scss';
 import { GrFormClose } from 'react-icons/all';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,10 +6,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import FormInput from '../formInput/form-input';
+import { firebase } from '../../firebase/firebase.utils';
 
 const RegAuth = () => {
   const loginInput = useSelector((state) => state.uiReducer.loginInput);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const changeHandler = (e) => {
+    const { name, value } = e.target;
+    if (name === 'email') {
+      setEmail(value);
+    }
+    if (name === 'password') {
+      setPassword(value);
+    }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const { user } = userCredential;
+        console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        // ..
+      });
+  };
   if (!loginInput) return null;
   return (
     <AnimatePresence>
@@ -39,7 +68,7 @@ const RegAuth = () => {
                 <GrFormClose />
               </Button>
             </Row>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3 d-flex flex-column">
                 <FormInput
                   groupClass="d-flex flex-column px-4"
@@ -47,13 +76,19 @@ const RegAuth = () => {
                   label="Email adress"
                   type="email"
                   labelClass="text-uppercase font-weight-light"
+                  name="email"
+                  value={email}
+                  handleChange={changeHandler}
                 />
                 <FormInput
                   groupClass="d-flex flex-column px-4 pt-3"
                   inputClass="p-3  border border-success"
                   labelClass="text-uppercase font-weight-light"
+                  name="password"
                   label="Password"
                   type="password"
+                  handleChange={changeHandler}
+                  value={password}
                 />
                 <Form.Group className="d-flex flex-column px-4 pt-5">
                   <Button

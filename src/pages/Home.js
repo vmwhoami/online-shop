@@ -1,17 +1,13 @@
 import React from 'react';
 import Layout from '../layout';
-import FormInput from '../components/formInput/form-input';
+import HomeSlider from '../components/homePage/homeSlider';
 
-const Home = () => {
-  const handleChange = (e) => {
-    console.log(e.target.value);
-  };
-  return (
-    <Layout>
-      <FormInput handleChange={handleChange} />
-    </Layout>
-  );
-};
+const Home = () => (
+  <Layout>
+    <HomeSlider />
+    <h2>This is going to be my main page</h2>
+  </Layout>
+);
 
 // Home.propTypes = {
 

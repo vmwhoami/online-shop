@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-// import '@react-firebase/database';
+import '@react-firebase/database';
 
 const {
   REACT_APP_API_KEY, REACT_APP_PROJECT_ID, REACT_APP_MESSEGING_SENDER_ID, REACT_APP_APP_ID,
@@ -15,11 +15,13 @@ export const config = {
   appId: `${REACT_APP_APP_ID}`,
 };
 
-const initFirebase = () => {
-  if (!firebase.app.length) {
-    firebase.initializeApp(config);
-  }
-};
-initFirebase();
+firebase.initializeApp(config);
+// const initFirebase = () => {
+//   if (!firebase.app.length) {
 
-export const auth = firebase.auth();
+//   }
+// };
+// initFirebase();
+
+const auth = firebase.auth();
+export { auth, firebase };

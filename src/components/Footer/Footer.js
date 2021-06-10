@@ -64,7 +64,6 @@ const Footer = () => {
                           aria-label="Subscribe"
                           type="email"
                           name="_replyto"
-
                         />
                         <div className="input-group-append">
                           <Button className="btn btn-white border" type="submit">Subscribe</Button>

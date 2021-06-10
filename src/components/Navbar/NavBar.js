@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaShoppingCart } from 'react-icons/all';
 import { Link, NavLink } from 'react-router-dom';
 import {
@@ -9,9 +10,8 @@ import LinksData from './links';
 import './navbar.scss';
 import Victoria from '../SVG';
 import { switchLogin, switchCart } from '../../redux/ui/uiActions';
-// import PropTypes from 'prop-types';
 
-const NavBar = () => {
+const NavBar = ({ mainpage }) => {
   const dispatch = useDispatch();
   const openCart = () => {
     dispatch(switchCart());
@@ -22,7 +22,7 @@ const NavBar = () => {
   };
   return (
     <header className="header header-dark  header">
-      <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark">
+      <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark" className={`${mainpage ? 'transparent' : 'dark'} `}>
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav " />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -67,8 +67,11 @@ const NavBar = () => {
   );
 };
 
-// NavBar.propTypes = {
-
-// };
+NavBar.defaultProps = {
+  mainpage: false,
+};
+NavBar.propTypes = {
+  mainpage: PropTypes.bool,
+};
 
 export default NavBar;

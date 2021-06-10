@@ -4,10 +4,16 @@
   width: 100%;
   min-height: 5rem;
   position: fixed !important;
-  background: $dark;
+ 
 }
 
+.black{
+  background: $dark ;
+}
  
+.transparent{
+  background: #00000000;
+}
 .logo svg {
   height: 3rem;
   width: 200px;

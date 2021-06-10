@@ -3,7 +3,7 @@ import Layout from '../layout';
 import HomeSlider from '../components/homePage/homeSlider';
 
 const Home = () => (
-  <Layout>
+  <Layout mainpage>
     <HomeSlider />
     <h2>This is going to be my main page</h2>
   </Layout>

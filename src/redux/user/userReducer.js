@@ -1,8 +1,11 @@
-import { LOGIN_USER, LOGOUT_USER } from './userTypes';
+import {
+  LOGIN_USER, LOGOUT_USER, REGISTER_USER, USER_ERROR,
+} from './userTypes';
 
 const initial = {
   currentUser: null,
   loggedIn: false,
+  error: {},
 };
 
 const userReducer = (state = initial, action) => {
@@ -11,10 +14,19 @@ const userReducer = (state = initial, action) => {
       return {
         ...state, currentUser: action.payload, loggedIn: true,
       };
+    case REGISTER_USER:
+      return {
+        ...state, currentUser: action.payload, loggedIn: false,
+      };
     case LOGOUT_USER:
       return {
         ...state, currentUser: null, loggedIn: false,
       };
+    case USER_ERROR:
+      return {
+        ...state, error: action.payload,
+      };
+
     default:
       return state;
   }

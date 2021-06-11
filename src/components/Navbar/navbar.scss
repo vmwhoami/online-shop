@@ -6,7 +6,13 @@
   position: fixed !important;
  
 }
+.hide{
+  transform: translateY(-100%);
+}
 
+.show{
+  transform: translateY(0%);
+}
 .black{
   background: $dark ;
 }

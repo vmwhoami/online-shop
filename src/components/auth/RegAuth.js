@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import './RegAuth.scss';
+import PropTypes from 'prop-types';
 import { GrFormClose } from 'react-icons/all';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import FormInput from '../formInput/form-input';
-import { firebase } from '../../firebase/firebase.utils';
+import { signIn } from '../../redux/user/uesrActions';
 
-const RegAuth = () => {
+const RegAuth = ({ register }) => {
   const loginInput = useSelector((state) => state.uiReducer.loginInput);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
   const dispatch = useDispatch();
   const changeHandler = (e) => {
     const { name, value } = e.target;
@@ -21,23 +23,13 @@ const RegAuth = () => {
     if (name === 'password') {
       setPassword(value);
     }
+    if (name === 'password2') {
+      setPassword2(value);
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        // Signed in
-        const { user } = userCredential;
-        console.log(user);
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        // ..
-      });
+    dispatch(signIn({ email, password }));
   };
   if (!loginInput) return null;
   return (
@@ -90,6 +82,19 @@ const RegAuth = () => {
                   handleChange={changeHandler}
                   value={password}
                 />
+
+                {register ? (
+                  <FormInput
+                    groupClass="d-flex flex-column px-4 pt-3"
+                    inputClass="p-3  border border-success"
+                    labelClass="text-uppercase font-weight-light"
+                    name="password2"
+                    label="Repeat password"
+                    type="password"
+                    handleChange={changeHandler}
+                    value={password2}
+                  />
+                ) : null}
                 <Form.Group className="d-flex flex-column px-4 pt-5">
                   <Button
                     className="btn-flat py-3  text-center rounded-0 border-0"
@@ -105,5 +110,12 @@ const RegAuth = () => {
       )}
     </AnimatePresence>
   );
+};
+
+RegAuth.defaultProps = {
+  register: false,
+};
+RegAuth.propTypes = {
+  register: PropTypes.bool,
 };
 export default RegAuth;

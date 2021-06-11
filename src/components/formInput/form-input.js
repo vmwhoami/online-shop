@@ -11,7 +11,7 @@ const FormInput = ({
       label
         ? (
           <label htmlFor={label} className={labelClass || null}>
-            { label}
+            {label}
           </label>
         )
         : null
@@ -24,11 +24,12 @@ const FormInput = ({
 FormInput.defaultProps = {
   label: null,
   labelClass: null,
+  handleChange: null,
 };
 FormInput.propTypes = {
-  handleChange: PropTypes.func.isRequired,
   groupClass: PropTypes.string.isRequired,
   inputClass: PropTypes.string.isRequired,
+  handleChange: PropTypes.func,
   labelClass: PropTypes.string,
   label: PropTypes.string,
 };

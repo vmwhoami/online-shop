@@ -7,11 +7,18 @@ import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { getProducts } from './redux/products/productsActions';
 import RegAuth from './components/auth/RegAuth';
+import { auth } from './firebase/firebase.utils';
+import { loginUser } from './redux/user/uesrActions';
 
 const Layout = ({ children, mainpage }) => {
   const dispatch = useDispatch();
+  let usubscribe = null;
   useEffect(() => {
+    usubscribe = auth.onAuthStateChanged((user) => {
+      dispatch(loginUser(user));
+    });
     dispatch(getProducts());
+    return () => usubscribe();
   }, []);
 
   return (

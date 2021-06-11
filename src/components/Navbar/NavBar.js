@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FaShoppingCart } from 'react-icons/all';
 import { Link, NavLink } from 'react-router-dom';
@@ -12,16 +12,11 @@ import Victoria from '../SVG';
 import { switchLogin, switchCart } from '../../redux/ui/uiActions';
 
 const NavBar = ({ mainpage }) => {
-  const [show, setShow] = useState(true);
-  const [position, setPosition] = useState(0);
+  // const [show, setShow] = useState(true);
+  // const [position, setPosition] = useState(0);
   const handleScroll = () => {
-    console.log(window.pageYOffset);
-    setPosition(document.body
-      .getBoundingClientRect().top);
-    setShow(document.body
-      .getBoundingClientRect().top > position);
+
   };
-  console.log(show);
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -60,6 +55,7 @@ const NavBar = ({ mainpage }) => {
 
             <Nav className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
               <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Login</Nav.Link>
+              <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Register</Nav.Link>
               <Nav.Link onClick={openCart} eventKey={2} className="text-uppercase .faded d-flex align-items-center p-1 border border-white">
 
                 <span className="px-1"> Cart</span>

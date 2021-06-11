@@ -20,9 +20,10 @@ const NavBar = ({ mainpage }) => {
   const openLogin = () => {
     dispatch(switchLogin());
   };
+  console.log(mainpage);
   return (
     <header className="header header-dark  header">
-      <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark" className={`${mainpage ? 'transparent' : 'dark'} `}>
+      <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark" className={`${mainpage ? 'transparent' : 'black'} `}>
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav " />
           <Navbar.Collapse id="responsive-navbar-nav">

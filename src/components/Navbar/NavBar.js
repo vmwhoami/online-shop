@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaShoppingCart } from 'react-icons/all';
 import { Link, NavLink } from 'react-router-dom';
@@ -12,6 +12,23 @@ import Victoria from '../SVG';
 import { switchLogin, switchCart } from '../../redux/ui/uiActions';
 
 const NavBar = ({ mainpage }) => {
+  const [show, setShow] = useState(true);
+  const [position, setPosition] = useState(0);
+  const handleScroll = () => {
+    console.log(window.pageYOffset);
+    setPosition(document.body
+      .getBoundingClientRect().top);
+    setShow(document.body
+      .getBoundingClientRect().top > position);
+  };
+  console.log(show);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const dispatch = useDispatch();
   const openCart = () => {
     dispatch(switchCart());
@@ -20,7 +37,7 @@ const NavBar = ({ mainpage }) => {
   const openLogin = () => {
     dispatch(switchLogin());
   };
-  console.log(mainpage);
+
   return (
     <header className="header header-dark  header">
       <Navbar collapseOnSelect expand="lg" sticky="top" variant="dark" className={`${mainpage ? 'transparent' : 'black'} `}>

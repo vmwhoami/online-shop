@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import {
   Container, Nav, Navbar,
 } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LinksData from './links';
 import './navbar.scss';
 import Victoria from '../SVG';
@@ -14,12 +14,14 @@ import { signOut } from '../../redux/user/uesrActions';
 
 const NavBar = ({ mainpage }) => {
   const dispatch = useDispatch();
+  const userReducer = useSelector((state) => state.userReducer);
+  const { loggedIn } = userReducer;
+  console.log(loggedIn);
   // const [show, setShow] = useState(true);
   // const [position, setPosition] = useState(0);
   const handleScroll = () => {
 
   };
-
   const logoutUser = () => {
     dispatch(signOut());
   };

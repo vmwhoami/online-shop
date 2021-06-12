@@ -14,6 +14,7 @@ const loginUser = (user) => ({
 
 const logOutUser = () => ({
   type: LOGOUT_USER,
+  payload: false,
 });
 
 const registerUser = (user) => ({
@@ -24,7 +25,10 @@ const registerUser = (user) => ({
 const signIn = (user) => async (dispatch) => {
   const { email, password } = user;
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => userCredential.user)
+    .then((userCredential) => {
+      const { user } = userCredential;
+      dispatch(loginUser(user));
+    })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -44,11 +48,10 @@ const register = (user) => async (dispatch) => {
 };
 
 const signOut = () => async (dispatch) => {
-  firebase.auth().signOut().then(() => {
-    dispatch(logOutUser);
-  }).catch((error) => {
-    dispatch(errorsUser({ error }));
-  });
+  firebase.auth().signOut().then(() => dispatch(logOutUser()))
+    .catch((error) => {
+      dispatch(errorsUser({ error }));
+    });
 };
 
 export {

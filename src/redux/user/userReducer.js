@@ -20,7 +20,7 @@ const userReducer = (state = initial, action) => {
       };
     case LOGOUT_USER:
       return {
-        ...state, currentUser: null, loggedIn: false,
+        ...state, currentUser: null, loggedIn: action.payload,
       };
     case USER_ERROR:
       return {

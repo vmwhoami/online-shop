@@ -20,11 +20,20 @@ const NavBar = ({ mainpage }) => {
   const [visible, setVisible] = useState(false);
 
   const handleScroll = () => {
-    if (document.body.getBoundingClientRect().y < -400) {
+    let lastScroll = 0;
+    const scrollY = document.body.getBoundingClientRect().y;
+    if (scrollY <= lastScroll) {
       setVisible(true);
     } else {
       setVisible(false);
     }
+    lastScroll = scrollY;
+
+    // if (document.body.getBoundingClientRect().y < -400) {
+    //   setVisible(true);
+    // } else {
+    //   setVisible(false);
+    // }
   };
 
   const logoutUser = () => {
@@ -50,7 +59,7 @@ const NavBar = ({ mainpage }) => {
         expand="lg"
         sticky="top"
         variant="dark"
-        className={`${visible ? 'transparent' : 'black'}`}
+        className={`${visible ? 'hide' : 'transparent'}`}
       >
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav " />

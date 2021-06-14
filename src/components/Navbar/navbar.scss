@@ -4,14 +4,19 @@
   width: 100%;
   min-height: 5rem;
   position: fixed !important;
- 
-}
-.lealea{
- background-color: red !important;
+ z-index: 25000;
+ transition: all .4s ease-in-out;
 }
 
-.show{
-  transform: translateY(20%);
+
+.scrolled-down{
+  transform:translateY(-100%);
+   transition: all 0.3s ease-in-out;
+}
+
+.scrolled-up{
+  transform:translateY(0);
+   transition: all 0.3s ease-in-out;
 }
 .black{
   background: $dark ;

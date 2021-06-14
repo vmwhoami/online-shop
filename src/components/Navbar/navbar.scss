@@ -6,12 +6,12 @@
   position: fixed !important;
  
 }
-.hide{
-  transform: translateY(-100%);
+.lealea{
+ background-color: red !important;
 }
 
 .show{
-  transform: translateY(0%);
+  transform: translateY(20%);
 }
 .black{
   background: $dark ;

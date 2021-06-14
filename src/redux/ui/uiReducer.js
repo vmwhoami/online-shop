@@ -4,6 +4,7 @@ const initial = {
   cart: false,
   loginInput: false,
   subscribed: false,
+
 };
 
 const uiReducer = (state = initial, action) => {

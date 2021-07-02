@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FaShoppingCart } from 'react-icons/all';
 import { Link, NavLink } from 'react-router-dom';
 import {
   Container, Nav, Navbar,
 } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import LinksData from './links';
 import './navbar.scss';
 import Victoria from '../SVG';
@@ -14,28 +14,10 @@ import { signOut } from '../../redux/user/uesrActions';
 
 const NavBar = ({ mainpage }) => {
   const dispatch = useDispatch();
-  const loggedIn = useSelector((state) => state.userReducer.loggedIn);
-  const [visible, setVisible] = useState(false);
-  console.log(loggedIn);
-  console.log(mainpage);
-  const handleScroll = () => {
-    let lastScroll = 0;
-    const scrollY = document.body.getBoundingClientRect().y;
-    if (scrollY <= lastScroll) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
-    lastScroll = scrollY;
-  };
 
   const logoutUser = () => {
     dispatch(signOut());
   };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const openCart = () => {
     dispatch(switchCart());
@@ -52,7 +34,7 @@ const NavBar = ({ mainpage }) => {
         expand="lg"
         sticky="top"
         variant="dark"
-        className={`${visible ? 'hide' : 'transparent'}`}
+        className={`${mainpage ? 'transparent' : 'black'}`}
       >
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav " />

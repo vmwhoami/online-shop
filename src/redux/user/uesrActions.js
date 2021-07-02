@@ -1,4 +1,4 @@
-import { firebase } from '../../firebase/firebase.utils';
+import firebase from '../../firebase/firebase.utils';
 import {
   LOGIN_USER, LOGOUT_USER, REGISTER_USER, USER_ERROR,
 } from './userTypes';

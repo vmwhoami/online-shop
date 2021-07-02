@@ -15,10 +15,9 @@ import { signOut } from '../../redux/user/uesrActions';
 const NavBar = ({ mainpage }) => {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.userReducer.loggedIn);
-  console.log(mainpage);
-  // const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(false);
-
+  console.log(loggedIn);
+  console.log(mainpage);
   const handleScroll = () => {
     let lastScroll = 0;
     const scrollY = document.body.getBoundingClientRect().y;
@@ -28,12 +27,6 @@ const NavBar = ({ mainpage }) => {
       setVisible(false);
     }
     lastScroll = scrollY;
-
-    // if (document.body.getBoundingClientRect().y < -400) {
-    //   setVisible(true);
-    // } else {
-    //   setVisible(false);
-    // }
   };
 
   const logoutUser = () => {
@@ -79,17 +72,12 @@ const NavBar = ({ mainpage }) => {
             </Navbar.Brand>
 
             <Nav className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
-              {loggedIn ? (
-                <>
-                  <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Login</Nav.Link>
-
-                  <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Register</Nav.Link>
-                </>
-              ) : <Nav.Link className="text-uppercase mr-2" onClick={logoutUser}>Logout</Nav.Link>}
-
+              <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Login</Nav.Link>
+              <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Register</Nav.Link>
+              <Nav.Link className="text-uppercase mr-2" onClick={logoutUser}>Logout</Nav.Link>
               <Nav.Link onClick={openCart} eventKey={2} className="text-uppercase faded d-flex align-items-center p-1 border border-white">
 
-                <span className="px-1"> Cart</span>
+                <span className="px-1">Cart</span>
                 <span className="svg">
                   {' '}
                   <FaShoppingCart />

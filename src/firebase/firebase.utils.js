@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import '@react-firebase/database';
+import 'firebase/storage';
 
 const {
   REACT_APP_API_KEY, REACT_APP_PROJECT_ID, REACT_APP_MESSEGING_SENDER_ID, REACT_APP_APP_ID,
@@ -16,12 +17,5 @@ export const config = {
 };
 
 firebase.initializeApp(config);
-// const initFirebase = () => {
-//   if (!firebase.app.length) {
 
-//   }
-// };
-// initFirebase();
-
-const auth = firebase.auth();
-export { auth, firebase };
+export default firebase;

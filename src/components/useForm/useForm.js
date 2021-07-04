@@ -10,7 +10,6 @@ const useForm = () => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    console.log('Reached this part');
     const { name, value } = e.target;
     setValues({
       ...values,

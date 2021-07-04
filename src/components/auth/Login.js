@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import './RegAuth.scss';
 import { GrFormClose } from 'react-icons/all';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import useForm from '../useForm/useForm';
@@ -12,12 +12,13 @@ const RegAuth = () => {
   const { handleChange, values } = useForm();
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Reached this part');
   };
-
+  const randKey = () => Math.random().toString(36).slice(2, 9);
   return (
-    <AnimatePresence>
+    <>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: 1 }}
@@ -44,9 +45,21 @@ const RegAuth = () => {
         </Row>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3 d-flex flex-column">
-            <Form.Label>Email adress</Form.Label>
 
             <FormInput
+              key={randKey()}
+              groupClass="d-flex flex-column px-4 pt-3"
+              inputClass="p-3  border border-success"
+              labelClass="text-uppercase font-weight-light"
+              name="email"
+              label="email"
+              type="email"
+              handleChange={handleChange}
+              value={values.email}
+            />
+
+            <FormInput
+              key={randKey()}
               groupClass="d-flex flex-column px-4 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
@@ -68,7 +81,7 @@ const RegAuth = () => {
         </Form>
       </motion.div>
 
-    </AnimatePresence>
+    </>
   );
 };
 

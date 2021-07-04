@@ -16,6 +16,7 @@ const ProdDetail = () => {
     categories = destructureObjs(cat);
   }
 
+  const randKey = () => Math.random().toString(36).slice(2, 9);
   return (
     <Col lg={9} className="mt-5">
       <Row className="gutter-2 gutter-lg-3">
@@ -26,7 +27,7 @@ const ProdDetail = () => {
 
           return (
             <ProdItem
-              key={prod.id}
+              key={randKey()}
               prod={prod}
               photo={photo}
               category={category}

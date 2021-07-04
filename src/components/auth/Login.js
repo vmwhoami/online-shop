@@ -5,12 +5,13 @@ import { GrFormClose } from 'react-icons/all';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
-import FormInput from '../formInput/form-input';
 import useForm from '../useForm/useForm';
+import FormInput from '../formInput/form-input';
 
 const RegAuth = () => {
-  const { handleChange, values } = useForm;
+  const { handleChange, values } = useForm();
   const dispatch = useDispatch();
+
   const handleSubmit = () => {
 
   };
@@ -43,16 +44,8 @@ const RegAuth = () => {
         </Row>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3 d-flex flex-column">
-            <FormInput
-              groupClass="d-flex flex-column px-4"
-              inputClass="p-3 border border-success"
-              label="Email adress"
-              type="email"
-              labelClass="text-uppercase font-weight-light"
-              name="email"
-              value={values.email}
-              handleChange={handleChange}
-            />
+            <Form.Label>Email adress</Form.Label>
+
             <FormInput
               groupClass="d-flex flex-column px-4 pt-3"
               inputClass="p-3  border border-success"

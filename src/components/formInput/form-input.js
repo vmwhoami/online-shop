@@ -24,12 +24,11 @@ const FormInput = ({
 FormInput.defaultProps = {
   label: null,
   labelClass: null,
-  handleChange: null,
 };
 FormInput.propTypes = {
   groupClass: PropTypes.string.isRequired,
   inputClass: PropTypes.string.isRequired,
-  handleChange: PropTypes.func,
+  handleChange: PropTypes.func.isRequired,
   labelClass: PropTypes.string,
   label: PropTypes.string,
 };

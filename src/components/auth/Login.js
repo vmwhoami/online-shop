@@ -7,10 +7,11 @@ import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import useForm from '../useForm/useForm';
 import FormInput from '../formInput/form-input';
+import Validate from '../useForm/validateInfo'
 import firebase from '../../firebase/firebase.utils';
 
 const RegAuth = () => {
-  const { handleChange, values } = useForm();
+  const { handleChange, values } = useForm(Validate);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {

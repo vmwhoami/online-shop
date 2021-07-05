@@ -38,7 +38,7 @@ const Register = () => {
           opacity: 1, y: '-50%', x: '-50%', transition: 1,
         }}
         exit={{ opacity: 1 }}
-        className="regauthent"
+        className="regauthent row"
       >
         <Row className="d-flex mx-0 p-4 align-items-center w-100 justify-content-between">
           <h5 className="text-uppercase">Register</h5>
@@ -46,11 +46,11 @@ const Register = () => {
             <GrFormClose />
           </Button>
         </Row>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3 d-flex flex-column">
 
+        <Form onSubmit={handleSubmit} className="col-12">
+          <Form.Group className="mb-3 d-flex flex-column col-12">
             <FormInput
-              groupClass="d-flex flex-column px-4 pt-3"
+              groupClass="d-flex flex-column px-0 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
               name="email"
@@ -61,7 +61,7 @@ const Register = () => {
             />
 
             <FormInput
-              groupClass="d-flex flex-column px-4 pt-3"
+              groupClass="d-flex flex-column px-0 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
               name="password"
@@ -73,7 +73,7 @@ const Register = () => {
             />
 
             <FormInput
-              groupClass="d-flex flex-column px-4 pt-3"
+              groupClass="d-flex flex-column px-0 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
               name="password2"
@@ -83,7 +83,7 @@ const Register = () => {
               handleChange={handleChange}
               value={values.password2}
             />
-            <Form.Group className="d-flex flex-column px-4 pt-5">
+            <Form.Group className="d-flex flex-column px-0 pt-5">
               <Button
                 className="btn-flat py-3  text-center rounded-0 border-0"
                 type="submit"
@@ -93,8 +93,8 @@ const Register = () => {
             </Form.Group>
           </Form.Group>
         </Form>
-      </motion.div>
 
+      </motion.div>
     </>
   );
 };

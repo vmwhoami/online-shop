@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import NavBar from './components/Navbar/NavBar';
 import Footer from './components/Footer/Footer';
@@ -9,6 +9,7 @@ import { getProducts } from './redux/products/productsActions';
 import Login from './components/auth/Login';
 
 const Layout = ({ children, mainpage }) => {
+  const loginInput = useSelector((state) => state.uiReducer.loginInput);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -17,7 +18,8 @@ const Layout = ({ children, mainpage }) => {
   return (
     <>
       <Cart />
-      <Login />
+      {loginInput ? <Login /> : null}
+
       <Container fluid className="px-0 w-100 pt-10">
         <NavBar mainpage={mainpage} />
         {children}

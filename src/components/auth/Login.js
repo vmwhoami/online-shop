@@ -14,7 +14,6 @@ const RegAuth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Reached this part');
   };
   const randKey = () => Math.random().toString(36).slice(2, 9);
   return (

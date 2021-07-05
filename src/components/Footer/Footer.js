@@ -8,8 +8,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import FormInput from '../formInput/form-input';
 import SocialLinks from './socialLinks';
 import { switchSubscribed } from '../../redux/ui/uiActions';
+import useFormer from '../useForm/useForm';
 
 const Footer = () => {
+  const { handleChange } = useFormer();
   const [state, handleSubmit] = useForm('xjvjwerr');
   const subscribed = useSelector((state) => state.uiReducer.subscribed);
   const dispatch = useDispatch();
@@ -59,11 +61,12 @@ const Footer = () => {
                         <FormInput
                           inputClass="form-control form-control-lg"
                           groupClass="w-75 d-flex"
-                          placeholder="Email"
-                          id="email"
+                          placeholder="Subscribe Email"
+                          id="Subscribe"
                           aria-label="Subscribe"
-                          type="email"
+                          type="Subscribe"
                           name="_replyto"
+                          handleChange={handleChange}
                         />
                         <div className="input-group-append">
                           <Button className="btn btn-white border" type="submit">Subscribe</Button>

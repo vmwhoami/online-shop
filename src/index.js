@@ -6,12 +6,6 @@ import store from './redux/store';
 import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import reportWebVitals from './reportWebVitals';
-// import fire from './firebase/firebaseConfig';
-
-// const getToke = async () => {
-//   const token = await fire.auth().currentUser.getIdToken();
-//   console.log(token);
-// };
 
 ReactDOM.render(
   <React.StrictMode>

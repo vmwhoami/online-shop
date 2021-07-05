@@ -7,9 +7,11 @@ import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import { getProducts } from './redux/products/productsActions';
 import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 const Layout = ({ children, mainpage }) => {
-  const loginInput = useSelector((state) => state.uiReducer.loginInput);
+  const state = useSelector((state) => state.uiReducer);
+  const { loginInput, registerInput } = state;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -19,7 +21,7 @@ const Layout = ({ children, mainpage }) => {
     <>
       <Cart />
       {loginInput ? <Login /> : null}
-
+      {registerInput ? <Register /> : null}
       <Container fluid className="px-0 w-100 pt-10">
         <NavBar mainpage={mainpage} />
         {children}

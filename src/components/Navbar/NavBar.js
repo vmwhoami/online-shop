@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import LinksData from './links';
 import './navbar.scss';
 import Victoria from '../SVG';
-import { switchLogin, switchCart } from '../../redux/ui/uiActions';
+import { switchLogin, switchCart, switchRegister } from '../../redux/ui/uiActions';
 // import { signOut } from '../../redux/user/uesrActions';
 
 const NavBar = ({ mainpage }) => {
@@ -25,6 +25,10 @@ const NavBar = ({ mainpage }) => {
 
   const openLogin = () => {
     dispatch(switchLogin());
+  };
+
+  const openRegister = () => {
+    dispatch(switchRegister());
   };
 
   return (
@@ -55,7 +59,7 @@ const NavBar = ({ mainpage }) => {
 
             <Nav className="col justify-content-start   flex-row  justify-content-sm-start justify-content-lg-end ">
               <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Login</Nav.Link>
-              <Nav.Link className="text-uppercase mr-2" onClick={openLogin}>Register</Nav.Link>
+              <Nav.Link className="text-uppercase mr-2" onClick={openRegister}>Register</Nav.Link>
 
               <Nav.Link onClick={openCart} eventKey={2} className="text-uppercase faded d-flex align-items-center p-1 border border-white">
 

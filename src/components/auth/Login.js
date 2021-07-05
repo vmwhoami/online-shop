@@ -7,6 +7,7 @@ import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import useForm from '../useForm/useForm';
 import FormInput from '../formInput/form-input';
+import firebase from '../../firebase/firebase.utils';
 
 const RegAuth = () => {
   const { handleChange, values } = useForm();
@@ -14,8 +15,9 @@ const RegAuth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(values);
+    firebase.auth();
   };
-  const randKey = () => Math.random().toString(36).slice(2, 9);
   return (
     <>
       <motion.div
@@ -46,7 +48,6 @@ const RegAuth = () => {
           <Form.Group className="mb-3 d-flex flex-column">
 
             <FormInput
-              key={randKey()}
               groupClass="d-flex flex-column px-4 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
@@ -58,13 +59,13 @@ const RegAuth = () => {
             />
 
             <FormInput
-              key={randKey()}
               groupClass="d-flex flex-column px-4 pt-3"
               inputClass="p-3  border border-success"
               labelClass="text-uppercase font-weight-light"
               name="password"
               label="Password"
               type="password"
+              autoComplete="current-password"
               handleChange={handleChange}
               value={values.password}
             />

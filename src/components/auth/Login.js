@@ -7,7 +7,7 @@ import { Row, Button, Form } from 'react-bootstrap';
 import { switchLogin } from '../../redux/ui/uiActions';
 import useForm from '../useForm/useForm';
 import FormInput from '../formInput/form-input';
-import Validate from '../useForm/validateInfo'
+import Validate from '../useForm/validateInfo';
 import firebase from '../../firebase/firebase.utils';
 
 const RegAuth = () => {
@@ -16,7 +16,7 @@ const RegAuth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
+
     firebase.auth();
   };
   return (

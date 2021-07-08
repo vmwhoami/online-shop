@@ -18,7 +18,7 @@ const Register = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(values.email, values.password)
-      .then((createdUser) => console.log(createdUser));
+      .then((createdUser) => createdUser);
   };
   return (
     <>
